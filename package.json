@@ -1,0 +1,32 @@
+{
+  "name": "find_a_fantastic_beast_app",
+  "version": "1.0.0",
+  "description": "Back-end for the Find A Fantastic Beast App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "server": "node server.js",
+    "client": "node start-client.js",
+    "debugger": "DEBUG=* npm run dev",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "Find A Fantastic Beast",
+    "express",
+    "React"
+  ],
+  "author": "LSD{evs} (Liana Penn, Silvia Colarossi, Dominick Serrant)",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "pg-promise": "^6.8.0"
+  }
+}
