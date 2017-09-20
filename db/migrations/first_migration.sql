@@ -16,3 +16,5 @@ CREATE TABLE IF NOT EXISTS animals (
     image_link TEXT,
     is_adopted BOOLEAN
 );
+
+CREATE INDEX ON animals (borough);
