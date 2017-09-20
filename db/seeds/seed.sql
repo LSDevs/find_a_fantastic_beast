@@ -556,8 +556,4 @@ false
     'Queens',
     'http://thefw.com/files/2012/11/tumblr_ls6ujhB6wV1qfq9oxo1_5001.jpg',
     false
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> silvia-model
