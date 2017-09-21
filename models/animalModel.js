@@ -41,12 +41,12 @@ Animal.update = (animal)=> {
         borough = $9
         image_link = $10
         WHERE id = $11
-        RETURNING *`, 
+        RETURNING *`,
         [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_food, animal.gender, animal.borough, animal.image_link, id]
     );
 };
 
-Animal.delete = (id) => {
+Animal.destroy = (id) => {
     return db.none(`
       DELETE FROM animals
       WHERE id = $1
