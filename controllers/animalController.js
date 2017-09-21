@@ -7,7 +7,7 @@ module.exports = {
       .then(animals => {
         res.json({
           message: 'ok',
-          data: {animals}
+          data: {animals},
         });
       })
       .catch(err => {
@@ -29,7 +29,7 @@ module.exports = {
       .catch(err => {
         console.log(err);
         res.status(400).json({
-          message: '400'
+          message: '400',
           err
         });
       });
@@ -57,7 +57,7 @@ module.exports = {
     .catch(err => {
       console.log(err);
       res.status(400).json({
-        message: '400'
+        message: '400',
         err
       });
     });
