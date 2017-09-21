@@ -5,7 +5,7 @@ const userRoutes = expr.Router();
 
 userRoutes.route('/:id')
   .delete(userController.deleteUser)
-  .get(userController.getSingleUser)
+  .get(userController.showSingleUser)
   .put(userController.alterUser);
 
 userRoutes.route('/')
