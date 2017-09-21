@@ -3,6 +3,7 @@ const animalModel = require('../models/animalModel');
 module.exports = {
 
   showByBorough(req, res) {
+    console.log(req.params);
     animalModel.findByBorough(req.params.borough)
       .then(animals => {
         res.json({

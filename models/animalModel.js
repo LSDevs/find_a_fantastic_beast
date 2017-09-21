@@ -2,8 +2,11 @@ const db = require('../db/config');
 const Animal = {};
 
 Animal.findByBorough = (borough) => {
+  console.log(borough)
     return db.query(
-        `SELECT * FROM animals WHERE borough = $1`,
+        `SELECT * FROM animals
+          WHERE borough = $1
+        `,
     [borough]
     );
 };
