@@ -3,6 +3,7 @@ const animalModel = require('../models/animalModel');
 module.exports = {
 
   showByBorough(req, res) {
+    console.log(req.params);
     animalModel.findByBorough(req.params.borough)
       .then(animals => {
         res.json({
@@ -29,7 +30,7 @@ module.exports = {
       .catch(err => {
         console.log(err);
         res.status(400).json({
-          message: '400'
+          message: '400',
           err
         });
       });
@@ -57,7 +58,7 @@ module.exports = {
     .catch(err => {
       console.log(err);
       res.status(400).json({
-        message: '400'
+        message: '400',
         err
       });
     });

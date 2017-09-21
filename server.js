@@ -24,7 +24,7 @@ app.get('/', function(req, res) {
 });
 
 const animalRoutes = require('./routes/animalRoutes');
-app.use('/api/animals/:borough', animalRoutes);
+app.use('/api/animals/', animalRoutes);
 
   app.get('*', function(req, res) {
     res.status(404).send({message: 'Oops! Not found.'})

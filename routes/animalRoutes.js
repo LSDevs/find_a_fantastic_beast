@@ -3,13 +3,13 @@ const animalController = require('../controllers/animalController');
 
 const animalRoutes = expr.Router();
 
-animalRoutes.route('/:id')
-  .get(animalController.showById);
-  .put(animalController.updateAnimal);
+animalRoutes.route('/:borough/:id')
+  .get(animalController.showById)
+  .put(animalController.updateAnimal)
   .delete(animalController.deleteAnimal);
 
-animalRoutes.route('/')
-  .get(animalController.showByBorough);
+animalRoutes.route('/:borough')
+  .get(animalController.showByBorough)
   .post(animalController.createAnimal);
 
 module.exports = animalRoutes;
