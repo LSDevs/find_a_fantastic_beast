@@ -2,7 +2,7 @@ const db = require('../db/config');
 const Animal = {};
 
 Animal.findByBorough = (borough) => {
-    return db.namy(
+    return db.many(
         `SELECT * FROM animals where borough = $1`,
     [borough]
     );
