@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SearchForm from './components/SearchForm';
 import './App.css';
+import yelp from ('yelp-fusion');
+import dotenv = require('dotenv').config();
 
 class App extends Component {
 constructor() {
@@ -20,12 +22,13 @@ handleBoroughSearch(event) {
   })
   console.log(event.target.value)
 }
+//axios(`http://localhost:3001/api/animals/${this.state.inputBoroughValue}`)
 
 handleSearchSubmit(event) {
-  //event.preventDefault();
+  event.preventDefault();
   event.target.content = '';
 
-  axios(`http://localhost:3001/api/animals/${this.state.inputBoroughValue}`)
+
   .then((res) => {
     this.setState(prevState => {
       console.log(res.data.data)
