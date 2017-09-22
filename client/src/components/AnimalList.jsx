@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Animal from './Animal';
-
+import axios from 'axios'
 
  class AnimalList extends Component {
 //     constructor() {
@@ -22,6 +22,12 @@ import Animal from './Animal';
 //         })
 //     })
 // }
+class AnimalList extends Component {
+
+ componentDidMount() {
+    console.log('in mount')
+     this.props.findAnimals();
+ }
 
 // renderAnimalList() {
 //     if (this.state.animalListDataReceived) {
@@ -31,7 +37,6 @@ import Animal from './Animal';
 //     } else return "Loading...";
 // }
 
-
     render() {
         return (
             <div id='AnimalBoroughList'>
@@ -40,6 +45,17 @@ import Animal from './Animal';
                 </h3>
                 </div>
                 )
+  render() {
+    return (
+      <div id='AnimalBoroughList'>
+        <h3>
+          {this.props.shelterData}
+        </h3>
+        <div id="animal List">
+
+        </div>
+      </div>
+        )
     }
 }
 

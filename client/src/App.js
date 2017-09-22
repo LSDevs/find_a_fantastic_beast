@@ -13,16 +13,19 @@ constructor() {
     animals: [],
     shelter: {},
     inputBoroughValue: '',
-    isAdd: false,
-
+    isAdding: false,
+    inputBoroughValue: '',
+    search: false,
   }
   this.handleBoroughSearch = this.handleBoroughSearch.bind(this);
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+  this.findAnimals = this.findAnimals.bind(this);
 }
 
 handleBoroughSearch(event) {
   this.setState({
-    inputBoroughValue: event.target.value
+    inputBoroughValue: event.target.value,
+    search: false,
   })
   console.log(event.target.value)
 }
@@ -32,6 +35,7 @@ handleSearchSubmit(event) {
   event.target.content = '';
  axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
 
+axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
   .then((res) => {
     this.setState(prevState => {
       console.log(res.data.data)
@@ -39,30 +43,49 @@ handleSearchSubmit(event) {
       shelter: res.data.data
     }
     })
+
   }).catch(err => console.log(err));
+
+  this.setState(prevState => {
+    return{
+      search: true,
+    }
+  })
+}
+findAnimals() {
+  axios(`http://localhost:3001/api/animals/${this.state.inputBoroughValue}`)
+     .then(res => {
+      this.setState(prevState => {
+        console.log(res.data.data.animals)
+        return {
+          animals: res.data.data.animals
+        }
+      })
+     })
+     .catch(err => {console.log(err);});
 }
 
 
 render() {
-  if (this.state.isAdd)
-  {return (
-    <AddAnimalForm
-    )}
-    return (
+    return(
       <div className="App">
       <button>Put Your Animal Up For Adoption</button>
       <SearchForm
-
         handleBoroughSearch={this.handleBoroughSearch}
-        handleSearchSubmit={this.handleSearchSubmit} />
+        handleSearchSubmit={this.handleSearchSubmit}
+      />
 
+        <AnimalList
+          shelterData={this.state.shelter.name}
+          animalData={this.state.animals}
+          findAnimals={this.findAnimals}
+        />
         <AnimalList
         shelterData={this.state.shelter.name}
         animalData={this.state.animals} />
       </div>
-    );
+    )
   }
-
 }
 
 export default App;
