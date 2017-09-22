@@ -38,7 +38,7 @@ app.get('/api/yelp/:locale/', (req, res) => {
       const qbComp = shelter.jsonBody.businesses[6].location.city;
 
           if (siComp === 'Staten Island') {
-          const results = shelter.jsonBody.businesses;
+          const results = shelter.jsonBody.businesses[0];
           console.log(results)
 
           res.json({
