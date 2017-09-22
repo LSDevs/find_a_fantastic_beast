@@ -8,7 +8,7 @@ class SearchForm extends Component {
                 className='search-form'
                 onSubmit={this.props.handleSearchSubmit}
             >
-            <div className='borough'> Choose your borough</div>
+            <div className='borough'> Choose your borough </div>
             <select name='borough' type='text' onChange={this.props.handleBoroughSearch}>
               <option value='null'>Select</option>
               <option value='Bronx'>Bronx</option>
@@ -19,7 +19,6 @@ class SearchForm extends Component {
 
 
             </select>
-
                 <button name="send" type="submit" className="submit">SEARCH</button>
             </form>
         </div>
