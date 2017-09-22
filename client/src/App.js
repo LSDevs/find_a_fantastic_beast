@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SearchForm from './components/SearchForm';
 import './App.css';
+import AnimalList from './components/AnimalList';
+import SingleAnimal from './components/SingleAnimal';
+import {Route, Redirect, Switch} from 'react-router-dom';
 
 class App extends Component {
 constructor() {
@@ -37,16 +40,24 @@ handleSearchSubmit(event) {
 }
 
 
-  render() {
+render() {
     return (
       <div className="App">
       <SearchForm
-      handleBoroughSearch={this.handleBoroughSearch}
-      handleSearchSubmit={this.handleSearchSubmit}
-      />
+
+        handleBoroughSearch={this.handleBoroughSearch}
+        handleSearchSubmit={this.handleSearchSubmit} />
+
+      <SearchForm
+        handleBoroughSearch={this.handleBoroughSearch}
+        handleSearchSubmit={this.handleSearchSubmit} />
+
+        <AnimalList
+        data={this.state.animals} />
       </div>
     );
   }
+
 }
 
 export default App;

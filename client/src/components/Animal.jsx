@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Animal extends Component {
     render() {
         return (
             <div className='Animal'>
                 <div id='animalCard'>
-                    {/* {this.props.animal.name} */}
+                    <img src={this.props.animal.image_link} alt='animal' />
                 </div>
-                <form id={this.props.id}
-                className='singleAnimalPreview'
-                {/* onSubmit={this.props.} */}
-                >
-                <button className='readMoreBtn'>Read more</button>
-                </form>
+                <div className="animalName">{this.props.animal.name}</div>
+                <div className="animalSpecies">{this.props.animal.species}</div>
+                <button className='readMoreBtn'><Link to={`/animals/${this.props.animal.id}`}>Read more</Link></button>
             </div>
         )
     }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import AnimalList from './AnimalList';
 
 class SearchForm extends Component {
     render() {
@@ -19,8 +21,10 @@ class SearchForm extends Component {
 
 
             </select>
-                <button name="send" type="submit" className="submit">SEARCH</button>
+                <button name="send" type="submit" className="submit">Search</button>
             </form>
+
+
         </div>
         )
     }
