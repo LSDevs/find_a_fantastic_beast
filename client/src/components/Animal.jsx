@@ -12,7 +12,7 @@ class Animal extends Component {
                 <div className="animalSpecies">{this.props.animal.species}</div>
                 <button className='readMoreBtn'><Link to={`/animals/${this.props.animal.id}`}>Read more</Link></button>
             </div>
-        )
-    }
+        );
+    };
 }
 export default Animal;

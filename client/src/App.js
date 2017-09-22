@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import SearchForm from './components/SearchForm';
 import './App.css';
 import AnimalList from './components/AnimalList';
@@ -12,6 +12,7 @@ constructor() {
   this.state = {
     animals: [],
     shelter: {},
+    borough: [],
     inputBoroughValue: '',
     search: false,
   }
@@ -41,6 +42,7 @@ axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
       shelter: res.data.data
     }
     })
+
   }).catch(err => console.log(err));
 
   this.setState(prevState => {
@@ -68,10 +70,9 @@ render() {
     return(
       <div className="App">
       <SearchForm
-
         handleBoroughSearch={this.handleBoroughSearch}
-        handleSearchSubmit={this.handleSearchSubmit} />
-
+        handleSearchSubmit={this.handleSearchSubmit}
+      />
 
         <AnimalList
           shelterData={this.state.shelter.name}
@@ -85,7 +86,6 @@ render() {
     return (
       <div className="App">
       <SearchForm
-
         handleBoroughSearch={this.handleBoroughSearch}
         handleSearchSubmit={this.handleSearchSubmit} />
       </div>
