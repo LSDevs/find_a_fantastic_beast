@@ -10,13 +10,13 @@ class AnimalList extends Component {
      this.props.findAnimals();
  }
 
-// renderAnimalList() {
-//     if (this.state.animalListDataReceived) {
-//         return this.state.animals.map((animal)=> {
-//             return <Animal animal={animal} key={animal.id} />
-//         })
-//     } else return "Loading...";
-// }
+renderAnimalList() {
+     if (this.props.isLoaded) {
+         return this.props.animalData.map((animal)=> {
+             return <Animal animal={animal} key={animal.id} />
+         })
+     } else return "Loading...";
+ }
 
 
   render() {
@@ -26,7 +26,7 @@ class AnimalList extends Component {
           {this.props.shelterData}
         </h3>
         <div id="animal List">
-
+            {this.renderAnimalList()}
         </div>
       </div>
         )

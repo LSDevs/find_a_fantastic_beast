@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import SearchForm from './components/SearchForm';
 import './App.css';
 import AnimalList from './components/AnimalList';
@@ -12,9 +12,9 @@ constructor() {
   this.state = {
     animals: [],
     shelter: {},
-    borough: [],
     inputBoroughValue: '',
     search: false,
+    animalsLoaded: false,
   }
   this.handleBoroughSearch = this.handleBoroughSearch.bind(this);
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
@@ -62,6 +62,13 @@ findAnimals() {
       })
      })
      .catch(err => {console.log(err);});
+
+  this.setState(prevState => {
+    return{
+      animalsLoaded: true,
+    }
+  })
+
 }
 
 
@@ -75,6 +82,7 @@ render() {
       />
 
         <AnimalList
+          isLoaded={this.state.animalsLoaded}
           shelterData={this.state.shelter.name}
           animalData={this.state.animals}
           findAnimals={this.findAnimals}
