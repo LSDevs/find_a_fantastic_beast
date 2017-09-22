@@ -14,7 +14,6 @@ constructor() {
     shelter: {},
     inputBoroughValue: '',
     isAdding: false,
-    inputBoroughValue: '',
     search: false,
     animalsLoaded: false,
   }
@@ -34,7 +33,6 @@ handleBoroughSearch(event) {
 handleSearchSubmit(event) {
   event.preventDefault();
   event.target.content = '';
- axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
 
 axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
   .then((res) => {
@@ -63,7 +61,7 @@ findAnimals() {
         }
       })
      })
-     .catch(err => {console.log(err);});
+     .catch(err => {console.log(err)});
 
   this.setState(prevState => {
     return{
@@ -89,9 +87,6 @@ render() {
           animalData={this.state.animals}
           findAnimals={this.findAnimals}
         />
-        <AnimalList
-        shelterData={this.state.shelter.name}
-        animalData={this.state.animals} />
       </div>
     )
   }

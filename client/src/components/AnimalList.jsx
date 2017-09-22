@@ -22,7 +22,6 @@ import axios from 'axios'
 //         })
 //     })
 // }
-class AnimalList extends Component {
 
  componentDidMount() {
     console.log('in mount')
@@ -37,14 +36,6 @@ renderAnimalList() {
      } else return "Loading...";
  }
 
-    render() {
-        return (
-            <div id='AnimalBoroughList'>
-                <h3>
-                {this.props.shelterData}
-                </h3>
-                </div>
-                )
   render() {
     return (
       <div id='AnimalBoroughList'>
