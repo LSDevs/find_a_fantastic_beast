@@ -4,6 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const dotenv = require('dotenv').config();
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function() {

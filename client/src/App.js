@@ -22,13 +22,13 @@ handleBoroughSearch(event) {
 }
 
 handleSearchSubmit(event) {
-  //event.preventDefault();
+  event.preventDefault();
   event.target.content = '';
 
   axios(`http://localhost:3001/api/animals/${this.state.inputBoroughValue}`)
   .then((res) => {
     this.setState(prevState => {
-      console.log(res.data.data)
+      console.log(res.data.data.animals)
       return {
       animals: res.data.data.animals
     }

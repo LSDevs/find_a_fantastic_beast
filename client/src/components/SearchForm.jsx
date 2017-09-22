@@ -10,6 +10,7 @@ class SearchForm extends Component {
             >
             <div className='borough'> Choose your borough</div>
             <select name='borough' type='text' onChange={this.props.handleBoroughSearch}>
+              <option value='null'>Select</option>
               <option value='Bronx'>Bronx</option>
               <option value='Brooklyn'>Brooklyn</option>
               <option value='Manhattan'>Manhattan</option>
