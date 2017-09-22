@@ -16,6 +16,7 @@ constructor() {
     isAdding: false,
     inputBoroughValue: '',
     search: false,
+    animalsLoaded: false,
   }
   this.handleBoroughSearch = this.handleBoroughSearch.bind(this);
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
@@ -63,6 +64,13 @@ findAnimals() {
       })
      })
      .catch(err => {console.log(err);});
+
+  this.setState(prevState => {
+    return{
+      animalsLoaded: true,
+    }
+  })
+
 }
 
 
@@ -76,6 +84,7 @@ render() {
       />
 
         <AnimalList
+          isLoaded={this.state.animalsLoaded}
           shelterData={this.state.shelter.name}
           animalData={this.state.animals}
           findAnimals={this.findAnimals}
