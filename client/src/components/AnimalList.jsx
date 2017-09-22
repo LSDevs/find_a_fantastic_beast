@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Animal from './Animal';
 
 
-class AnimalList extends Component {
+ class AnimalList extends Component {
 //     constructor() {
 //         super();
 //         this.state = {
@@ -14,7 +14,7 @@ class AnimalList extends Component {
 //     }
 
 // componentDidMount() {
-//     axios(`http://localhost:3001/api/animals/${this.state.inputBoroughValue}`)
+//     axios(`http://localhost:3001/api/animals/${this.state.borough}`)
 //     .then((animals) => {
 //         this.setState({
 //             animals: animals.animals,
@@ -35,12 +35,9 @@ class AnimalList extends Component {
     render() {
         return (
             <div id='AnimalBoroughList'>
-                {this.props.data.map(animal => {
-                    return <Animal
-                    singleAnimal={animal}
-                    iden={animal.id}
-                    key={animal.id} />
-           })}
+                <h3>
+                {this.props.shelterData}
+                </h3>
                 </div>
                 )
     }
