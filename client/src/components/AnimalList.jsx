@@ -1,27 +1,14 @@
 import React, { Component } from 'react';
 import Animal from './Animal';
+import axios from 'axios'
 
 
 class AnimalList extends Component {
-//     constructor() {
-//         super();
-//         this.state = {
-//             animals:[],
-//             inputBoroughValue: '',
-//             animalListDataReceived: false,
-//         }
 
-//     }
-
-// componentDidMount() {
-//     axios(`http://localhost:3001/api/animals/${this.state.inputBoroughValue}`)
-//     .then((animals) => {
-//         this.setState({
-//             animals: animals.animals,
-//             animalListDataReceived: true,
-//         })
-//     })
-// }
+ componentDidMount() {
+    console.log('in mount')
+     this.props.findAnimals();
+ }
 
 // renderAnimalList() {
 //     if (this.state.animalListDataReceived) {
@@ -32,17 +19,17 @@ class AnimalList extends Component {
 // }
 
 
-    render() {
-        return (
-            <div id='AnimalBoroughList'>
-                {this.props.data.map(animal => {
-                    return <Animal
-                    singleAnimal={animal}
-                    iden={animal.id}
-                    key={animal.id} />
-           })}
-                </div>
-                )
+  render() {
+    return (
+      <div id='AnimalBoroughList'>
+        <h3>
+          {this.props.shelterData}
+        </h3>
+        <div id="animal List">
+
+        </div>
+      </div>
+        )
     }
 }
 
