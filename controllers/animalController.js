@@ -6,7 +6,6 @@ module.exports = {
     console.log(req.params);
     animalModel.findByBorough(req.params.borough)
       .then(animals => {
-        console.log(animals);
         res.json({
           message: 'ok',
           data: {animals},

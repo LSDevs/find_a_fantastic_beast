@@ -1,3 +1,4 @@
+
 \c animals_db_dev;
 
 INSERT INTO animals(name, species, age, breed_origin, personality, abilities, favorite_foods, gender, borough, image_link, is_adopted) VALUES

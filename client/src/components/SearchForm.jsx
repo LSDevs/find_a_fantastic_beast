@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import AnimalList from './AnimalList';
 
 class SearchForm extends Component {
     render() {
@@ -10,6 +12,7 @@ class SearchForm extends Component {
             >
             <div className='borough'> Choose your borough </div>
             <select name='borough' type='text' onChange={this.props.handleBoroughSearch}>
+              <option value='null'>Select</option>
               <option value='Bronx'>Bronx</option>
               <option value='Brooklyn'>Brooklyn</option>
               <option value='Manhattan'>Manhattan</option>
@@ -18,8 +21,10 @@ class SearchForm extends Component {
 
 
             </select>
-                <button name="send" type="submit" className="submit">SEARCH</button>
+                <button name="send" type="submit" className="submit">Search</button>
             </form>
+
+
         </div>
         )
     }
