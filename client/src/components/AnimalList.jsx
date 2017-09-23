@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Animal from './Animal';
-import axios from 'axios'
 
-
-class AnimalList extends Component {
+ class AnimalList extends Component {
 
  componentDidMount() {
     console.log('in mount')
@@ -17,7 +15,6 @@ renderAnimalList() {
          })
      } else return "Loading...";
  }
-
 
   render() {
     return (

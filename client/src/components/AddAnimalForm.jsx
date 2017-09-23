@@ -1,77 +1,88 @@
 import React, { Component } from 'react';
 
 class AddAnimalForm extends Component {
+
     render() {
         return (
-            <form 
+            <form
                 className='addNewAnimal'
-                {/* function that handle the submit form add new */}
-                {/* onSubmit={this.props.???} */}
+                onSubmit={this.props.handleAddFormSubmit}
                 >
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.name} */}
+                    value={this.props.inputNameValue}
                     name='name'
                     placeholder='Name'
+                    onChange={this.props.handleInputNameChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.species} */}
+                    value={this.props.inputSpeciesValue}
                     name='species'
                     placeholder='Species'
+                    onChange={this.props.handleInputSpeciesChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.age} */}
+                    value={this.props.inputAgeValue}
                     name='age'
                     placeholder='Age'
+                    onChange={this.props.handleInputAgeChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.breed_origin} */}
+                    value={this.props.inputBreedOriginValue}
                     name='breed_origin'
                     placeholder='Breed or origin'
+                    onChange={this.props.handleInputBreedOriginChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.personality} */}
+                    value={this.props.inputPersonalityValue}
                     name='personality'
                     placeholder='Personality'
+                    onChange={this.props.handleInputPersonalityChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.abilities} */}
+                    value={this.props.inputAbilitiesValue}
                     name='abilities'
                     placeholder='Abilities'
+                    onChange={this.props.handleInputAbilitiesChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.favorite_food} */}
+                    value={this.props.inputFavoriteFoodsValue}
                     name='favorite_food'
                     placeholder='Favorite food'
+                    onChange={this.props.handleInputFavoriteFoodsChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.gender} */}
+                    value={this.props.inputGenderValue}
                     name='gender'
                     placeholder='Gender'
+                    onChange={this.props.handleInputGenderChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.borough} */}
+                    value={this.props.addInputBoroughValue}
                     name='borough'
                     placeholder='Borough'
+                    onChange={this.props.handleInputBoroughChange}
                 /><br/>
-                <input 
+                <input
                     type='text'
-                    {/* value={this.props.????.image_link} */}
+                    value={this.props.inputImageValue}
                     name='image_link'
                     placeholder='Link to the picture'
+                    onChange={this.props.handleInputImageChange}
                 /><br/>
-                <button className='addNewBtn'>Add a new animal</button>        
-            </form>    
+                <button id="submit">Add Animal</button>
+                </form>
         )
     }
+
 }
 
 export default AddAnimalForm;
