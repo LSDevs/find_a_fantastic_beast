@@ -6,6 +6,8 @@ class SignInForm extends Component {
 
         // Set the state
         this.state = {
+            // -----> do we have to set it undefined, as well?
+            // name: undefined,
             username: undefined,
             password: undefined,
         };
@@ -75,13 +77,11 @@ class SignInForm extends Component {
                         <p className="control">
                             <button className="inputBtn">
                                 Login
-                                </button>
-                            </p>
-
-                        </div>
-
+                            </button>
+                        </p>
+                    </div>
                 </form>
-                </div>
+            </div>
         )
     }
 }
