@@ -11,6 +11,7 @@ class SignInForm extends Component {
         };
         this.handleSumbit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleLoginForm = this.handleLoginForm.bind(this);
     } 
     
     handleInputChange(event) {
@@ -29,6 +30,20 @@ class SignInForm extends Component {
         // send the data to the parent
         this.props.handleLoginForm(this.state);
     }
+
+    async handleLoginForm(data) {
+        try {
+          const token = await axios.post('/auth', data);
+          window.localStorage.setItem({ token });
+          this.setState({
+            auth: true,
+          });
+        } catch (e) {
+          this.setState({
+            auth: false,
+          });
+        }
+      }
 
     render() {
         return (
