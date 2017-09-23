@@ -5,29 +5,28 @@ class SingleAnimal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      animal: null,
+      animal: {},
       animalDataReceived: false,
       id: this.props.match.params.id,
     }
   }
-
   componentDidMount() {
-    axios(`http://localhost:3001/api/animals/${this.state.id}`)
-    .then((res) => {
-      return res.json();
-    }).then((animal) => {
-      this.setState({
-        animal: animal.animal,
-        animalDataReceived: true,
+    axios(`http://localhost:3001/api/animals/:borough/${this.state.id}`)
+      .then(res => {
+        this.setState(prevState => {
+          console.log(res.data)
+          return {
+            animal: res.data.data.animal,
+            animalDataReceived: true,
+          }
       })
     })
   }
-
   renderAnimal() {
     if (this.state.animalDataReceived) {
       return (
         <div className="single-animal-render">
-        <img src={this.props.animal.image_link} alt='animal' />
+          <img src={this.state.animal.image_link} alt='animal' />
         <span className="name">{this.state.animal.name}</span>
          <span className="name">{this.state.animal.species}</span>
           <span className="name">{this.state.animal.age}</span>
@@ -45,12 +44,10 @@ class SingleAnimal extends Component {
   render() {
     return (
       <div className="single-animal">
-      {this.renderAnimal()}
+        {this.renderAnimal()}
       </div>
       )
   }
-
-
 }
 
 export default SingleAnimal;
