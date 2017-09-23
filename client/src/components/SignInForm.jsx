@@ -1,64 +1,74 @@
 import React from 'react';
 
 class SignInForm extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+
+        // Set the state
         this.state = {
-            userInputData: [],
-            userInputEmail: '',
-            userInputName: '',
-        }
-
+            username: undefined,
+            password: undefined,
+        };
+        this.handleSumbit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     } 
-}
-
-handleInputEmailChange(event) {
-    this.setState({
-        userInputEmail: event.target.value
-    });
-}
-
-handleInputNameChange(event) {
-    this.setState({
-        userInputName: event.target.value
-    });
-}
-       
-handleUserDataSubmit(event) {
-    event.preventDefault();
-    event.target.email = ''
-    event.target.name = '';
-
-}
-
-render() {
-    console.log('App rendering, this.state');
-    return (
-        <Header />
-    )
-}
-       <form 
-        className='signInForm'
-        onSubmit={props.handleUserDataSignIn}
-        >
-        <input 
-        type='text'
-        value={props.inputEmail}
-        name='email'
-        placeholder='Email'
-        onChange={props.handleInputEmail}
-        />
-        <br/>
-        <input
-            type='text'
-            value={props.inputName}
-            name='name'
-            placeholder='props.handleInputName' 
-        />
-        <br/>
-        <button type='Submit' value='submit'>Sign in</button>
-        </form>
     
+    handleInputChange(event) {
 
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
 
-export default SignInForm;
+        this.setState({
+            [name]: value,
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        // send the data to the parent
+        this.props.handleLoginForm(this.state);
+    }
+
+    render() {
+        return (
+            <div className="loginBox">
+                <form onSubmit={this.handleSubmit}>
+                    <div className="inputField">
+                        <p className='inputP'>
+                            <input
+                            name="username"
+                            className="input"
+                            type="email"
+                            placeholder="Email"
+                            onChange={this.handleInputChange}
+                            />
+                        </p>
+                    </div>
+                    <div className="inputField">
+                        <p className='inputP'>
+                            <input
+                            name="password"
+                            className="input"
+                            type="password"
+                            placeholder="Password"
+                            onChange={this.handleInputChange}
+                            />
+                        </p>
+                    </div>
+                    <div className="controlField">
+                        <p className="control">
+                            <button className="inputBtn">
+                                Login
+                                </button>
+                            </p>
+
+                        </div>
+
+                </form>
+                </div>
+        )
+    }
+}
+
+module.exports = SignInForm;

@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
-import AnimalList from './components/AnimalList';
-import SearchForm from './components/SearchForm';
-import './App.css';
-=======
 import SearchForm from './components/SearchForm';
 import './App.css';
 import AnimalList from './components/AnimalList';
 import SingleAnimal from './components/SingleAnimal';
 import AddAnimalForm from './components/AddAnimalForm';
 import {Route, Redirect, Switch} from 'react-router-dom';
->>>>>>> 3b370173ea44154e76f6fd7b1bb903b30706cc1a
 
 class App extends Component {
 constructor() {
@@ -138,24 +132,12 @@ handleBoroughSearch(event) {
   })
   console.log(event.target.value)
 }
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
->>>>>>> 3b370173ea44154e76f6fd7b1bb903b30706cc1a
-
-=======
->>>>>>> f799318a168d76f15427c1b21ef10ee09e4f5cb1
 handleSearchSubmit(event) {
   event.preventDefault();
   event.target.content = '';
-<<<<<<< HEAD
-  axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
-
-=======
 
 axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
->>>>>>> 3b370173ea44154e76f6fd7b1bb903b30706cc1a
   .then((res) => {
     this.setState(prevState => {
       console.log(res.data.data)
@@ -163,10 +145,6 @@ axios(`http://localhost:3001/api/yelp/${this.state.inputBoroughValue}`)
       shelter: res.data.data
     }
     })
-<<<<<<< HEAD
-  }).catch(err => console.log(err));
-  }
-=======
 
   }).catch(err => console.log(err));
 
@@ -196,7 +174,6 @@ findAnimals() {
 
 }
 
->>>>>>> 3b370173ea44154e76f6fd7b1bb903b30706cc1a
 
 render() {
   if (this.state.isAdding) {
@@ -239,14 +216,6 @@ render() {
     return(
       <div className="App">
       <SearchForm
-<<<<<<< HEAD
-        handleBoroughSearch={this.handleBoroughSearch}
-        handleSearchSubmit={this.handleSearchSubmit} />
-
-      <AnimalList
-        shelterData={this.state.shelter.name}
-        animalData={this.state.animals} />
-=======
         handleBoroughSearch={this.handleBoroughSearch}
         handleSearchSubmit={this.handleSearchSubmit}
       />
@@ -269,7 +238,6 @@ render() {
       <SearchForm
         handleBoroughSearch={this.handleBoroughSearch}
         handleSearchSubmit={this.handleSearchSubmit} />
->>>>>>> 3b370173ea44154e76f6fd7b1bb903b30706cc1a
       </div>
     );
   }
