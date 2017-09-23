@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const User = require('./user/User');
+const User = require('../user/User');
 const TokenService = require ('./TokenService');
 
 const isValidUser = async ({ username, password:textPassword }) => {
