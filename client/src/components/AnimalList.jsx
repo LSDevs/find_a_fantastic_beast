@@ -1,27 +1,7 @@
 import React, { Component } from 'react';
 import Animal from './Animal';
-import axios from 'axios'
 
  class AnimalList extends Component {
-//     constructor() {
-//         super();
-//         this.state = {
-//             animals:[],
-//             inputBoroughValue: '',
-//             animalListDataReceived: false,
-//         }
-
-//     }
-
-// componentDidMount() {
-//     axios(`http://localhost:3001/api/animals/${this.state.borough}`)
-//     .then((animals) => {
-//         this.setState({
-//             animals: animals.animals,
-//             animalListDataReceived: true,
-//         })
-//     })
-// }
 
  componentDidMount() {
     console.log('in mount')

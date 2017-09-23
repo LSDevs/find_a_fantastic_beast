@@ -1,155 +1,84 @@
 import React, { Component } from 'react';
 
 class AddAnimalForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isAdding: false,
-            inputNameValue: '',
-            inputSpeciesValue: '',
-            inputAgeValue: '',
-            inputBreedOriginValue: '',
-            inputPersonalityValue: '',
-            inputAbilitiesValue: '',
-            inputFavoriteFoodsValue: '',
-            inputGenderValue: '',
-            inputBoroughValue: '',
-            inputImageValue: '',
-        }
-        this.handleInputNameChange = this.handleInputNameChange.bind(this);
-        this.handleInputSpeciesChange = this.handleInputSpeciesChange.bind(this);
-        this.handleInputAgeChange = this.handleInputAgeChange.bind(this);
-        this.handleInputBreedOriginChange = this.handleInputBreedOriginChange.bind(this);
-        this.handleInputPersonalityChange = this.handleInputPersonalityChange.bind(this);
-        this.handleInputAbilitiesChange = this.handleInputAbilitiesChange.bind(this);
-        this.handleInputFavoriteFoodsChange = this.handleInputFavoriteFoodsChange.bind(this);
-        this.handleInputGenderChange = this.handleInputGenderChange.bind(this);
-        this.handleInputBoroughChange = this.handleInputBoroughChange.bind(this);
-        this.handleInputImageChange = this.handleInputImageChange.bind(this);
-    }
 
-    handleInputNameChange(event) {
-        this.setState({inputNameValue: event.target.value})
-    }
-
-    handleInputSpeciesChange(event) {
-        this.setState({inputSpeciesValue: event.target.value})
-    }
-
-    handleInputAgeChange(event) {
-        this.setState({inputAgeValue: event.target.value})
-    }
-
-    handleInputBreedOriginChange(event) {
-        this.setState({inputBreedOriginValue: event.target.value})
-    }
-
-    handleInputPersonalityChange(event) {
-        this.setState({inputPersonalityValue: event.target.value})
-    }
-
-    handleInputAbilitiesChange(event) {
-        this.setStte({inputAbilitiesValue: event.target.value})
-    }
-
-    handleInputFavoriteFoodsChange(event) {
-        this.setState({inputFavoriteFoodsValue: event.target.value})
-    }
-
-    handleInputGenderChange(event) {
-        this.setState({inputGenderValue: event.target.value})
-    }
-
-    handleInputBoroughChange(event) {
-        this.setState({inputBoroughValue: event.target.value})
-    }
-
-    handleInputImageChange(event) {
-        this.setState({inputImageValue: event.target.value})
-    }
-
-
-
-    renderAddForm() {
+    render() {
         return (
             <form
                 className='addNewAnimal'
-                onSubmit={(event)=> {
-                    this.props.handleAnimalAdd(event);
-                    this.setState({isAdding: false});
-                }}
+                onSubmit={this.props.handleAddFormSubmit}
                 >
                 <input
                     type='text'
-                    value={this.state.inputNameValue}
+                    value={this.props.inputNameValue}
                     name='name'
                     placeholder='Name'
-                    onChange={this.handleInputNameChange}
+                    onChange={this.props.handleInputNameChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputSpeciesValue}
+                    value={this.props.inputSpeciesValue}
                     name='species'
                     placeholder='Species'
-                    onChange={this.handleInputSpeciesChange}
+                    onChange={this.props.handleInputSpeciesChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputAgeValue}
+                    value={this.props.inputAgeValue}
                     name='age'
                     placeholder='Age'
-                    onChange={this.handleInputAgeChange}
+                    onChange={this.props.handleInputAgeChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputBreedOriginValue}
+                    value={this.props.inputBreedOriginValue}
                     name='breed_origin'
                     placeholder='Breed or origin'
-                    onChange={this.state.handleInputBreedOriginChange}
+                    onChange={this.props.handleInputBreedOriginChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputPersonalityValue}
+                    value={this.props.inputPersonalityValue}
                     name='personality'
                     placeholder='Personality'
-                    onChange={this.state.handleInputPersonalityChange}
+                    onChange={this.props.handleInputPersonalityChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputAbilitiesValue}
+                    value={this.props.inputAbilitiesValue}
                     name='abilities'
                     placeholder='Abilities'
-                    onChange={this.state.handleInputAbilitiesChange}
+                    onChange={this.props.handleInputAbilitiesChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputFavoriteFoodsValue}
+                    value={this.props.inputFavoriteFoodsValue}
                     name='favorite_food'
                     placeholder='Favorite food'
-                    onChange={this.state.handleInputFavoriteFoodsChange}
+                    onChange={this.props.handleInputFavoriteFoodsChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputGenderValue}
+                    value={this.props.inputGenderValue}
                     name='gender'
                     placeholder='Gender'
-                    onChange={this.state.handleInputGenderChange}
+                    onChange={this.props.handleInputGenderChange}
                 /><br/>
                 <input
                     type='text'
-                    value={this.state.inputBoroughValue}
+                    value={this.props.addInputBoroughValue}
                     name='borough'
                     placeholder='Borough'
-                    onChange={this.state.handleInputBoroughChange}
+                    onChange={this.props.handleInputBoroughChange}
                 /><br/>
                 <input
                     type='text'
-                    {this.state.inputImageValue}
+                    value={this.props.inputImageValue}
                     name='image_link'
                     placeholder='Link to the picture'
-                    onChange={this.state.handleInputImageChange}
+                    onChange={this.props.handleInputImageChange}
                 /><br/>
-                <input type="submit" value="Submit Animal" />
+                <button id="submit">Add Animal</button>
                 </form>
         )
     }
