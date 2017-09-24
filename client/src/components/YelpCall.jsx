@@ -9,7 +9,7 @@ class YelpCall extends Component {
           className='search-form'
           onSubmit={this.props.handleSearchSubmit}
         >
-          <div className='borough'> Choose your borough </div>
+          <div className='chooseBorough'> Choose your borough </div>
             <select name='borough' type='text' onChange={this.props.handleBoroughSearch}>
               <option value='null'>Select</option>
               <option value='Bronx'>Bronx</option>
