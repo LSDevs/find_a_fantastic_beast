@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-
+import EditAnimalForm from './EditAnimalForm';
 class Animal extends Component {
   render() {
     console.log(this.props.animal.id);

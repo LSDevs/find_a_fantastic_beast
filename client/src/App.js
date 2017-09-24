@@ -6,7 +6,7 @@ import SearchForm from './components/SearchForm';
 import './App.css';
 import SingleAnimal from './components/SingleAnimal';
 import AddAnimalForm from './components/AddAnimalForm';
-
+import EditAnimalForm from './components/EditAnimalForm';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
 
@@ -21,6 +21,7 @@ class App extends Component {
             <Route exact path='/search' component={SearchForm} />
             <Route exact path='/animals/:id' component={SingleAnimal} />
             <Route exact path='/addAnimal' component={AddAnimalForm} />
+            <Route exact path='/editAnimal/:id' component={EditAnimalForm} />
             <Redirect to='/' />
           </Switch>
         </main>

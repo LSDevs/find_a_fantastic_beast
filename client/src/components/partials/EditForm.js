@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 
-class AddForm extends Component {
+class EditForm extends Component {
   render() {
+
     return(
       <form
-        className='addNewAnimal'
-        onSubmit={this.props.handleAddFormSubmit}
+        className='editAnimal'
+        onSubmit={this.props.handleAnimalEdit}
       >
         <input
           type='text'
@@ -80,10 +81,10 @@ class AddForm extends Component {
           placeholder='Image Link'
           onChange={this.props.handleInputImageChange}
         /><br/>
-        <button id="submit">Add Animal</button>
+        <button id="submit">Submit Edit!</button>
       </form>
     )
   }
 }
 
-export default AddForm;
+export default EditForm;

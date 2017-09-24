@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import EditAnimalForm from './EditAnimalForm';
 
 class SingleAnimal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isBeingEdited: false,
       animal: {},
       animalDataReceived: false,
       id: this.props.match.params.id,
@@ -22,6 +24,18 @@ class SingleAnimal extends Component {
       })
     })
   }
+
+   handleDeleteAnimal(animalId) {
+    fetch(`http://localhost:3001/api/animals/:borough/${this.state.id}`, {
+      method: 'DELETE',
+    })
+    .then((response) => {
+      if (response.status === 200) {
+        alert(`You have adopted ${this.state.animal.name}!`)
+      }
+    })
+  }
+
   renderAnimal() {
     if (this.state.animalDataReceived) {
       return (
@@ -41,13 +55,30 @@ class SingleAnimal extends Component {
     } else return 'Loading...';
   }
 
+renderEditForm() {
+  if (this.state.isBeingEdited) {
+    return (
+      <EditAnimalForm />
+      )
+  }
+}
+
+
   render() {
     return (
       <div className="single-animal">
         {this.renderAnimal()}
+        <button onClick={() => {
+          this.setState({isBeingEdited: true})
+        }}>Edit Animal</button>
+        {this.renderEditForm()}
+        <button onClick={() => { this.props.handleDeleteAnimal(this.props.animal.id) }}>
+          Adopt me!
+        </button>
       </div>
       )
   }
 }
+
 
 export default SingleAnimal;
