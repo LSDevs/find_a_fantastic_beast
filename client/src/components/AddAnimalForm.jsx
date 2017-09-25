@@ -4,8 +4,8 @@ import axios from 'axios';
 import AddForm from './partials/AddForm';
 
 class AddAnimalForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       inputNameValue: '',
       inputSpeciesValue: '',
@@ -77,7 +77,7 @@ class AddAnimalForm extends Component {
       image_link: this.state.inputImageValue
     })
     .then((res) => {
-      if (res.animal.id !== undefined) {
+      console.log(res.data.data.animal);
         const newAnimal = {
           name: res.data.animal.name,
           species: res.data.animal.species,
@@ -96,7 +96,6 @@ class AddAnimalForm extends Component {
             animals: prevState.animals.concat(newAnimal),
           }
         })
-      }
       }).catch(err => console.log(err));
     }
 
@@ -114,6 +113,16 @@ class AddAnimalForm extends Component {
         handleInputFavoriteFoodsChange={this.handleInputFavoriteFoodsChange}
         handleInputBreedOriginChange={this.handleInputBreedOriginChange}
         handleAddFormSubmit={this.handleAddFormSubmit}
+        inputNameValue={this.props.inputNameValue}
+        inputSpeciesValue={this.props.inputSpeciesValue}
+        inputAgeValue={this.props.inputAgeValue}
+        inputBreedOriginValue={this.props.inputBreedOriginValue}
+        inputPersonalityValue={this.props.inputPersonalityValue}
+        inputAbilitiesValue={this.props.inputAbilitiesValue}
+        inputFavoriteFoodsValue={this.props.inputFavoriteFoodsValue}
+        inputGenderValue={this.props.inputGenderValue}
+        addInputBoroughValue={this.props.addInputBoroughValue}
+        inputImageValue={this.props.inputImageValue}
       />
     )
   }

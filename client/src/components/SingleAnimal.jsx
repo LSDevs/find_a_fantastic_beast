@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import EditAnimalForm from './EditAnimalForm';
 
+
 class SingleAnimal extends Component {
   constructor(props) {
     super(props);
@@ -58,7 +59,7 @@ class SingleAnimal extends Component {
 renderEditForm() {
   if (this.state.isBeingEdited) {
     return (
-      <EditAnimalForm />
+      <EditAnimalForm animal={this.state.animal}/>
       )
   }
 }

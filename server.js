@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const dotenv = require('dotenv').config();
+const animalRoutes = require('./routes/animalRoutes');
+const yelpCall = require('./external/yelpCall');
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function() {
@@ -24,10 +26,10 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-const animalRoutes = require('./routes/animalRoutes');
+
 app.use('/api/animals/', animalRoutes);
 
-const yelpCall = require('./external/yelpCall');
+
 app.get('/api/yelp/:locale/', (req, res) => {
   yelpCall(process.env.IED, process.env.IET, req.params.locale)
 /*

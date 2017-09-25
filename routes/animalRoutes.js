@@ -9,7 +9,12 @@ animalRoutes.route('/:borough/:id')
   .delete(animalController.deleteAnimal);
 
 animalRoutes.route('/:borough')
-  .get(animalController.showByBorough)
-  .post(animalController.createAnimal);
+  .get(animalController.showByBorough);
+
+animalRoutes.post('/', animalController.createAnimal);
 
 module.exports = animalRoutes;
+
+//  /api/animals -post
+// /api/animals/:borough = .get
+// /api/animals/:id = get (single), put, delete
