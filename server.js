@@ -5,29 +5,32 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const dotenv = require('dotenv').config();
+const animalRoutes = require('./routes/animalRoutes');
+const userRouter = require('./routes/userRoutes');
+const yelpCall = require('./external/yelpCall');
+const TokenService = require('./routes/auth/TokenService');
+const {authRouter, AuthService} = require('./routes/auth/authRouter');
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, function() {
-  console.log(`listening on port ${PORT}`);
-});
+
+app.set('supersecret', process.env.SERVER_SECRET);
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
-
 app.use(logger('dev'));
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(TokenService.receiveToken);
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-const animalRoutes = require('./routes/animalRoutes');
 app.use('/api/animals/', animalRoutes);
+app.use('/auth', authRouter);
+app.use('/user', userRouter);
 
-const yelpCall = require('./external/yelpCall');
 app.get('/api/yelp/:locale/', (req, res) => {
   yelpCall(process.env.IED, process.env.IET, req.params.locale)
 /*
@@ -64,14 +67,16 @@ app.get('/api/yelp/:locale/', (req, res) => {
             data: results
           })
         }
-        })
+    })
 
     .catch(err => {console.log(err);});
 });
 
-  app.get('*', function(req, res) {
-    res.status(404).send({message: 'Oops! Not found.'})
+  app.get('*', (req, res) => {
+    res.status(404).send({message: 'Oops! Maybe take a left in Sarasota?'})
 
 })
 
-
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}, in ${app.get('env')} mode.`);
+}).on('error', console.error);

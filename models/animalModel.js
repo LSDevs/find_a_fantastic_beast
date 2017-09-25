@@ -1,9 +1,13 @@
-const db = require('../db/config');
+const pgp = require('pg-promise')();
+const dbConfig = require('../db/config');
+
+const db = pgp(dbConfig);
+
 const Animal = {};
 
 Animal.findByBorough = (borough) => {
   console.log(borough)
-    return db.query(
+    return db.many(
         `SELECT * FROM animals
           WHERE borough = $1
         `,

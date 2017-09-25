@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-// @Silvi - This is just a mess, I was trying to mix all the exercise we've done done so far, but actually the funcion is incompleted. 
+// @Silvi - This is just a mess, I was trying to mix all the exercise we've done done so far, but actually the funcion is incompleted.
 
 
-class Quote extends Component {
+class EditAnimalForm extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             isBeingEdited: false,
             inputNameValue: this.props.animals.name,
@@ -25,7 +25,7 @@ class Quote extends Component {
 
 handleAnimalEdit(event) {
     event.preventDefault();
-    axios.put(`http://localhost:3001/api/animals/${this.state.id}`) {
+    axios.put(`http://localhost:3001/api/animals/${this.state.id}`), {
         name: this.state.inputNameValue,
         species: this.state.inputSpeciesValue,
         age: this.state.inputAgeValue,

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class SingleAnimal extends Component {
@@ -36,6 +37,9 @@ class SingleAnimal extends Component {
               <span className="name">{this.state.animal.favorite_foods}</span>
                <span className="name">{this.state.animal.gender}</span>
                 <span className="name">{this.state.animal.borough}</span>
+                <br />
+                <button><Link to={`/animals/${this.state.id}/adopted`}> Adopt Now! </Link>
+                </button>
         </div>
         )
     } else return 'Loading...';
