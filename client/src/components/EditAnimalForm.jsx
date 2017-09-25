@@ -6,20 +6,20 @@ import SingleAnimal from './SingleAnimal';
 
 
 class EditAnimalForm extends Component {
-    constructor() {
-    super();
+    constructor(props) {
+    super(props);
     this.state = {
-      isBeingEdited: false,
-      inputNameValue: '',
-      inputSpeciesValue: '',
-      inputAgeValue: '',
-      inputBreedOriginValue: '',
-      inputPersonalityValue: '',
-      inputAbilitiesValue: '',
-      inputFavoriteFoodsValue: '',
-      inputGenderValue: '',
-      addInputBoroughValue: '',
-      inputImageValue: '',
+      inputNameValue: props.animal.name,
+      inputSpeciesValue: props.animal.species,
+      inputAgeValue: props.animal.age,
+      inputBreedOriginValue: props.animal.breed_origin,
+      inputPersonalityValue: props.animal.personality,
+      inputAbilitiesValue: props.animal.abilities,
+      inputFavoriteFoodsValue: props.animal.favorite_foods,
+      inputGenderValue: props.animal.gender,
+      addInputBoroughValue: props.animal.borough,
+      inputImageValue: props.animal.image_link,
+      id: props.animal.id,
     }
     this.handleAnimalEdit = this.handleAnimalEdit.bind(this);
     this.handleInputNameChange = this.handleInputNameChange.bind(this);
@@ -67,8 +67,9 @@ class EditAnimalForm extends Component {
   handleAnimalEdit(event) {
     event.preventDefault();
     event.target.content = '';
+    console.log('props here ----->',this.props.animal.id);
 
-    axios.put(`http://localhost:3001/api/animals/${event.target.id.value}`, {
+    axios.put(`http://localhost:3001/api/animals/${this.props.animal.borough}/${this.state.id}`, {
       name: event.target.name.value,
       species: event.target.species.value,
       age: event.target.age.value,
@@ -79,7 +80,11 @@ class EditAnimalForm extends Component {
       gender: event.target.gender.value,
       borough: event.target.borough.value,
       image_link: event.target.image_link.value
-    }).catch(err => console.log(err));
+    }).then(animal => {
+      console.log(animal, 'update')
+
+    })
+    .catch(err => console.log(err));
 
   }
 
@@ -97,6 +102,17 @@ class EditAnimalForm extends Component {
         handleInputFavoriteFoodsChange={this.handleInputFavoriteFoodsChange}
         handleInputBreedOriginChange={this.handleInputBreedOriginChange}
         handleAnimalEdit={this.handleAnimalEdit}
+        inputNameValue={this.state.inputNameValue}
+        inputSpeciesValue={this.state.inputSpeciesValue}
+        inputAgeValue={this.state.inputAgeValue}
+        inputBreedOriginValue={this.state.inputBreedOriginValue}
+        inputPersonalityValue={this.state.inputPersonalityValue}
+        inputAbilitiesValue={this.state.inputAbilitiesValue}
+        inputFavoriteFoodsValue={this.state.inputFavoriteFoodsValue}
+        inputGenderValue={this.state.inputGenderValue}
+        addInputBoroughValue={this.state.addinputGenderValue}
+        inputImageValue={this.state.inputImageValue}
+        animal={this.props.animal}
       />
     )
   }

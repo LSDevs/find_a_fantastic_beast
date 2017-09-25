@@ -21,31 +21,34 @@ Animal.findById = (id) => {
 
 // animal is the correct parameter?
 Animal.create = (animal) => {
+    console.log(animal);
     return db.one(
         `
-        INSERT INTO animals (name,species,age,breed_origin,personality,abilities,favorite_foods,gender,borough,image_link,is_adopted)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
+        INSERT INTO animals
+        (name,species,age,breed_origin,personality,abilities,favorite_foods,gender,borough,image_link, is_adopted)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10, false)
         RETURNING *`,
-        [animal]
+        [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_foods, animal.gender, animal.borough, animal.image_link, animal.is_adopted]
     )};
 
 
 Animal.update = (animal)=> {
+  console.log(animal)
         return db.one(`
         UPDATE animals SET
         name = $1,
         species = $2,
-        age = $3
-        breed_origin = $4
-        personality = $5
-        abilities = $6
-        favorite_foods = $7
-        gender = $8
-        borough = $9
+        age = $3,
+        breed_origin = $4,
+        personality = $5,
+        abilities = $6,
+        favorite_foods = $7,
+        gender = $8,
+        borough = $9,
         image_link = $10
         WHERE id = $11
         RETURNING *`,
-        [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_food, animal.gender, animal.borough, animal.image_link, id]
+        [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_food, animal.gender, animal.borough, animal.image_link, animal.id]
     );
 };
 

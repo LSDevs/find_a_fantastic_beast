@@ -114,6 +114,7 @@ class AddAnimalForm extends Component {
         handleInputFavoriteFoodsChange={this.handleInputFavoriteFoodsChange}
         handleInputBreedOriginChange={this.handleInputBreedOriginChange}
         handleAddFormSubmit={this.handleAddFormSubmit}
+        inputNameValue={this.props.inputNameValue}
       />
     )
   }
