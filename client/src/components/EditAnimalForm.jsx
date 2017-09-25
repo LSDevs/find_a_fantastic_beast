@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import EditForm from './partials/EditForm';
+import SingleAnimal from './SingleAnimal';
 
-// @Silvi - This is just a mess, I was trying to mix all the exercise we've done done so far, but actually the funcion is incompleted.
 
 
 class EditAnimalForm extends Component {
@@ -66,6 +66,7 @@ class EditAnimalForm extends Component {
 
   handleAnimalEdit(event) {
     event.preventDefault();
+    event.target.content = '';
 
     axios.put(`http://localhost:3001/api/animals/${event.target.id.value}`, {
       name: event.target.name.value,

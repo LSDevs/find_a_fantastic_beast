@@ -56,7 +56,7 @@ class EditForm extends Component {
         <input
           type='text'
           value={this.props.inputFavoriteFoodsValue}
-          name='favorite_food'
+          name='favorite_foods'
           placeholder='Favorite food'
           onChange={this.props.handleInputFavoriteFoodsChange}
         /><br/>
@@ -67,7 +67,7 @@ class EditForm extends Component {
           placeholder='Gender'
           onChange={this.props.handleInputGenderChange}
         /><br/>
-          <select name='addBorough' type='text' onChange={this.props.handleInputBoroughChange}
+          <select name='borough' type='text' onChange={this.props.handleInputBoroughChange}
           value={this.props.addInputBoroughValue}>
           <option value='null'>Borough</option>
           <option value='Bronx'>Bronx</option>
