@@ -25,7 +25,6 @@ handleAnimalEdit(event) {
     event.preventDefault();
 
     event.target.content = '';
-    console.log('props here ----->',this.props.animal.id);
 
     axios.put(`http://localhost:3001/api/animals/${this.props.animal.borough}/${this.state.id}`, {
       name: event.target.name.value,
@@ -43,6 +42,7 @@ handleAnimalEdit(event) {
 
     })
     .catch(err => console.log(err));
+}
 
   render() {
     return (
@@ -72,6 +72,6 @@ handleAnimalEdit(event) {
       />
     )
 }
-}}
+}
 
 export default EditAnimalForm;
