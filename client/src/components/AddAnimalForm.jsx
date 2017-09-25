@@ -77,7 +77,7 @@ class AddAnimalForm extends Component {
       image_link: this.state.inputImageValue
     })
     .then((res) => {
-      console.log(res.data.data.animal);
+      // console.log(res.data.animal);
         const newAnimal = {
           name: res.data.animal.name,
           species: res.data.animal.species,
