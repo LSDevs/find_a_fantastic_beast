@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 
-class AddForm extends Component {
+class EditForm extends Component {
   render() {
+
     return(
       <form
-        className='addNewAnimal'
-        onSubmit={this.props.handleAddFormSubmit}
+        className='editAnimal'
+        onSubmit={this.props.handleAnimalEdit}
       >
         <input
           type='text'
@@ -52,7 +53,7 @@ class AddForm extends Component {
         <input
           type='text'
           value={this.props.inputFavoriteFoodsValue}
-          name='favorite_food'
+          name='favorite_foods'
           placeholder='Favorite food'
           onChange={this.props.handleInputFavoriteFoodsChange}
         /><br/>
@@ -63,7 +64,7 @@ class AddForm extends Component {
           placeholder='Gender'
           onChange={this.props.handleInputGenderChange}
         /><br/>
-          <select name='addBorough' type='text' onChange={this.props.handleInputBoroughChange}
+          <select name='borough' type='text' onChange={this.props.handleInputBoroughChange}
           value={this.props.addInputBoroughValue}>
           <option value='null'>Borough</option>
           <option value='Bronx'>Bronx</option>
@@ -80,10 +81,10 @@ class AddForm extends Component {
           placeholder='Image Link'
           onChange={this.props.handleInputImageChange}
         /><br/>
-        <button id="submit">Add Animal</button>
+        <button id="submit">Submit Edit!</button>
       </form>
     )
   }
 }
 
-export default AddForm;
+export default EditForm;

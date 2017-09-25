@@ -1,24 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Carter+One|Lobster+Two|Wendy+One');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+ img {
+  width: 400px;
+  border: 4px solid white;
+  display: flex;
+  margin: 0 auto;
+ }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+ body {
+  background: url("./images/background2.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+ }
 
-.App-intro {
-  font-size: large;
-}
+ #title {
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 90px;
+  color: #109820;
+  -webkit-animation:colorchange 15s infinite alternate;
+  text-align: center;
+    }
+
+    @-webkit-keyframes colorchange {
+      0% {
+
+        color: blue;
+      }
+
+      10% {
+
+        color: #8e44ad;
+      }
+
+      20% {
+
+        color: #1abc9c;
+      }
+
+      30% {
+
+        color: #d35400;
+      }
+
+      40% {
+
+        color: blue;
+      }
+
+      50% {
+
+        color: #34495e;
+      }
+
+      60% {
+
+        color: red;
+      }
+
+      70% {
+
+        color: #2980b9;
+      }
+      80% {
+
+        color: #f1c40f;
+      }
+
+      90% {
+
+        color: #2980b9;
+      }
+
+      100% {
+
+        color: pink;
+      }
+    }
+
+    header {
+      background: black;
+      opacity: 0.5;
+    filter: alpha(opacity=50);
+    }
+
+ li {
+  font-family: 'Berkshire Swash', cursive;
+  display: inline-block;
+  padding: 10px;
+ }
+
+ a {
+  text-decoration: none;
+  color: #c4dbf6;
+ }
+
+ .chooseBorough {
+  font-family: 'Lobster Two', cursive;
+  font-size: 24px;
+  color: #c4dbf6;
+ }

@@ -59,9 +59,9 @@ handleAnimalEdit(event) {
             })
         }
     })
-
+ }
 }
 
-}
+
 
 export default EditAnimalForm;

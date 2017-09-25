@@ -76,9 +76,8 @@ class AddAnimalForm extends Component {
       borough: this.state.addInputBoroughValue,
       image_link: this.state.inputImageValue
     })
-    .then(res => {
-      console.log(res.data);
-      {
+    .then((res) => {
+      if (res.animal.id !== undefined) {
         const newAnimal = {
           name: res.data.animal.name,
           species: res.data.animal.species,
@@ -91,6 +90,7 @@ class AddAnimalForm extends Component {
           borough: res.data.animal.borough,
           image_link: res.data.animal.image_link,
         }
+        console.log(newAnimal)
         this.setState((prevState) => {
           return {
             animals: prevState.animals.concat(newAnimal),
