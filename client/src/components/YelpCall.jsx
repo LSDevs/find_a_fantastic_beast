@@ -10,7 +10,7 @@ class YelpCall extends Component {
           onSubmit={this.props.handleSearchSubmit}
         >
           <div className='chooseBorough'> Choose your borough </div>
-            <select name='borough' type='text' onChange={this.props.handleBoroughSearch}>
+            <select className='boroughSearch' name='borough' type='text' onChange={this.props.handleBoroughSearch}>
               <option value='null'>Select</option>
               <option value='Bronx'>Bronx</option>
               <option value='Brooklyn'>Brooklyn</option>
@@ -18,7 +18,7 @@ class YelpCall extends Component {
               <option value='Queens'>Queens</option>
               <option value='Staten Island'>Staten Island</option>
             </select>
-          <button name="send" type="submit" className="submit">Search</button>
+          <button name="send" type="submit" className="submitBorough">Search</button>
         </form>
       </div>
     )

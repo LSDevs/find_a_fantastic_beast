@@ -9,6 +9,7 @@ class Animal extends Component {
         <div className='animalImage'>
           <img src={this.props.animal.image_link} alt='animal' />
         </div>
+        <div className="animalInfo">
         <div className="animalName">
           {this.props.animal.name}
         </div>
@@ -20,6 +21,7 @@ class Animal extends Component {
             View
           </Link>
         </button>
+        </div>
       </div>
     );
   };
