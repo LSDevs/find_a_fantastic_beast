@@ -5,6 +5,7 @@ class YelpCall extends Component {
   render() {
     return (
       <div id='search-form-container'>
+         <button><Link to='/addAnimal'>Add a new animal</Link></button>
         <form
           className='search-form'
           onSubmit={this.props.handleSearchSubmit}

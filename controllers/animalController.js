@@ -90,6 +90,7 @@ module.exports = {
       });
     });
   },
+
   deleteAnimal(req, res) {
     animalModel.destroy(req.params.id)
     .then(() => res.json({message: 'Successful!'}))

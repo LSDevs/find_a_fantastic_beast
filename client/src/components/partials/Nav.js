@@ -8,6 +8,7 @@ class Nav extends Component {
                 <ul>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='#'>About</Link></li>
+                    <li><Link to='/addAnimal'>Add animal</Link></li>
                     <li><Link to='#'>SignIn</Link></li>
                     <li><Link to='#'>Register</Link></li>
                     </ul>

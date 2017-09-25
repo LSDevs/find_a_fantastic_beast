@@ -13,7 +13,7 @@ class Home extends Component {
     console.log("Loading is true")
         return (
             <div className='landingPage'>
-
+                <button><Link to='/search'>Find your shelter</Link></button>
             </div>
             )
         }

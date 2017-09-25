@@ -62,7 +62,7 @@ class AddAnimalForm extends Component {
   }
   handleAddFormSubmit(event) {
     event.preventDefault();
-    //event.target.content = '';
+    // event.target.content = '';
 
     axios.post('http://localhost:3001/api/animals', {
       name: this.state.inputNameValue,

@@ -6,7 +6,10 @@ class EditForm extends Component {
     return(
       <form
         className='editAnimal'
-        onSubmit={this.props.handleAnimalEdit}
+        onSubmit={(event) => {
+          this.props.handleAnimalEdit(event);
+          this.setState({isBeingEdited: false});
+          }}
       >
         <input
           type='text'
