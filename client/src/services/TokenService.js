@@ -8,6 +8,9 @@ const TokenService = {
     read() {
         return window.localStorage.getItem('authToken');
     },
+    destroy() {
+      window.localStorage.removeItem('authToken');
+    },
 };
 
 export default TokenService;
