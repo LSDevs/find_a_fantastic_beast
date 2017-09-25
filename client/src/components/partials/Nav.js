@@ -6,10 +6,11 @@ class Nav extends Component {
         return (
             <nav>
                 <ul>
-                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/search'>Home</Link></li>
+                    <li><Link to='/addAnimal'>Add Animal</Link></li>
                     <li><Link to='#'>About</Link></li>
-                    <li><Link to='#'>SignIn</Link></li>
-                    <li><Link to='#'>Register</Link></li>
+                    <li><Link to='/user/login'>SignIn</Link></li>
+                    <li><Link to='/user/register'>Register</Link></li>
                     </ul>
                 </nav>
         );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import './App.css';
-
+import RegisterForm from './components/RegisterForm';
 import Home from './components/Home';
 import SearchForm from './components/SearchForm';
 import './App.css';
@@ -18,10 +18,12 @@ class App extends Component {
         <Header />
         <main>
           <Switch>
-            <Route exact path='/' component={Home} />
+             <Route exact path='/' component={Home} />
             <Route exact path='/search' component={SearchForm} />
             <Route exact path='/animals/:id' component={SingleAnimal} />
             <Route exact path='/addAnimal' component={AddAnimalForm} />
+
+            <Route exact path='/user/register' component={RegisterForm} />
             <Route exact path='/editAnimal/:id' component={EditAnimalForm} />
             <Redirect to='/'/>
           </Switch>
