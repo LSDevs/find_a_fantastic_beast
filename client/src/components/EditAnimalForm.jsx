@@ -15,7 +15,7 @@ class EditAnimalForm extends Component {
        inputAbilitiesValue: props.animal.abilities,
        inputFavoriteFoodsValue: props.animal.favorite_foods,
        inputGenderValue: props.animal.gender,
-    addInputBoroughValue: props.animal.borough,
+       addInputBoroughValue: props.animal.borough,
       inputImageValue: props.animal.image_link,
       id: props.animal.id,
     }

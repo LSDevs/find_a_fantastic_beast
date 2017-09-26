@@ -38,6 +38,8 @@ class SignInForm extends Component {
     }
     render() {
         return (
+            <div className='LoginBoxContainer'>
+                <h1> LOGIN</h1>
             <div className="loginBox">
                 <form onSubmit={this.handleSubmit}>
                     <div className="inputField">
@@ -65,12 +67,13 @@ class SignInForm extends Component {
                     <div className="controlField">
                         <p className="control">
                             <button className="inputBtn">
-                                Login
+                                LOGIN
                             </button>
                         </p>
                     </div>
                 </form>
             </div>
+        </div>
         )
     }
 }

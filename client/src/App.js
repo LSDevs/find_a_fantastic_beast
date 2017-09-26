@@ -30,7 +30,6 @@ class App extends Component {
             <Route exact path='/addAnimal' component={AddAnimalForm} />
             <Route exact path='/user/register' component={RegisterForm} />
             <Route exact path='/user/login' component={AdoptAnimal} />
-
             <Redirect to='/'/>
           </Switch>
         </main>
