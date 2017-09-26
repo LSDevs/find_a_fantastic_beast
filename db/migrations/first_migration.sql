@@ -18,4 +18,3 @@ CREATE TABLE IF NOT EXISTS animals (
 );
 
 CREATE INDEX ON animals (borough);
-

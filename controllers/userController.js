@@ -1,4 +1,5 @@
-const animalModel = require('../models/animalModel');
+const userModel = require('../models/userModel');
+const crypt = require('bcrypt');
 
 module.exports = {
 
@@ -35,24 +36,16 @@ module.exports = {
         });
       });
   },
-  createAnimal(req, res) {
-    animalModel.create({
+  async createUser(req, res) {
+    userModel.upSertUser({
       name: req.body.name,
-      species: req.body.species,
-      age: req.body.age,
-      breed_origin: req.body.breed_origin,
-      personality: req.body.personality,
-      abilities: req.body.abilities,
-      favorite_foods: req.body.favorite_foods,
-      gender: req.body.gender,
-      borough: req.body.borough,
-      image_link: req.body.image_link,
-      is_adopted: false,
+      email: req.body.email,
+      password: await crypt.hash(req.body.password, await crypt.genSalt()),
     })
-    .then(animal => {
+    .then(user => {
       res.json({
         message: 'ok',
-        data: {animal}
+        data: {user}
       });
     })
     .catch(err => {
@@ -64,7 +57,6 @@ module.exports = {
     });
   },
   updateAnimal(req, res) {
-    console.log(req.body);
     animalModel.update({
       name: req.body.name,
       species: req.body.species,
@@ -76,7 +68,6 @@ module.exports = {
       gender: req.body.gender,
       borough: req.body.borough,
       image_link: req.body.image_link,
-      id: req.params.id
     })
     .then(animal => {
       res.json({
@@ -92,8 +83,8 @@ module.exports = {
       });
     });
   },
-  deleteAnimal(req, res) {
-    animalModel.destroy(req.params.id)
+  deleteUser(req, res) {
+    userModel.destroyUser(req.params.email)
     .then(() => res.json({message: 'Successful!'}))
     .catch(err => {
       console.log(err);
@@ -103,7 +94,4 @@ module.exports = {
       });
     });
   },
-  //showAnimalByUser(req, res) {
-   // animalModel.findByUser(req.params.uid)
-  //},
 };
