@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import {Route, Redirect, Switch} from 'react-router-dom';
-<<<<<<< HEAD
-=======
 
 import './App.css';
 import RegisterForm from './components/RegisterForm';
->>>>>>> 6c8a73608167aae64dc228b461c59274042dd824
 import Home from './components/Home';
 import SearchForm from './components/SearchForm';
 import SingleAnimal from './components/SingleAnimal';

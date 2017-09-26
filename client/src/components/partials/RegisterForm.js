@@ -56,34 +56,59 @@ handleRegister(event) {
     }
     render() {
     return(
-      <form
-        className='addUser'
-        onSubmit={this.handleRegister}
-      >
-        <input
-          type='text'
-          value={this.state.name}
-          name='inputName'
-          placeholder='Name'
-          onChange={this.handleInputChange}
-        /><br/>
-        <input
-          type='text'
-          value={this.state.email}
-          name='inputEmail'
-          placeholder='Email'
-          onChange={this.handleInputChange}
-        /><br/>
-        <input
-          type='password'
-          value={this.state.password}
-          name='inputPassword'
-          placeholder='Password'
-          onChange={this.handleInputChange}
-        /><br/>
-
-        <button id="submit">RegisterUser</button>
-      </form>
+      <div className='LoginBoxContainer'>
+        <div className="LoginBox">
+          <form
+            className='addUser'
+            onSubmit={this.handleRegister}
+          >
+          <div className='inputField'>
+              <p className='inputP'>
+                <input
+                 className="input"          
+                  type='text'
+                  value={this.state.name}
+                  name='inputName'
+                  placeholder='Name'
+                  onChange={this.handleInputChange}
+                />
+              </p>
+            </div>
+            <br/>
+            <div className='inputField'>
+              <p className='inputP'>
+                  <input
+                  className="input"
+                    type='text'
+                    value={this.state.email}
+                    name='inputEmail'
+                    placeholder='Email'
+                    onChange={this.handleInputChange}
+                  />
+                  </p>
+              </div>
+            <br/>
+            <div className='inputField'>
+              <p className='inputP'>
+                <input
+                className="input"
+                  type='password'
+                  value={this.state.password}
+                  name='inputPassword'
+                  placeholder='Password'
+                  onChange={this.handleInputChange}
+                />
+                </p>
+              </div>
+                <br/>
+                <div className='controlField'>
+                  <p className='control'>
+                    <button className="inputBtn" id="submit">RegisterUser</button>
+                  </p>
+                </div>
+          </form>
+        </div>
+      </div>
     )
 }
 }

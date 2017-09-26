@@ -38,6 +38,8 @@ class SignInForm extends Component {
     }
     render() {
         return (
+            <div className='LoginBoxContainer'>
+                <h1> LOGIN</h1>
             <div className="loginBox">
                 <form onSubmit={this.handleSubmit}>
                     <div className="inputField">
@@ -71,6 +73,7 @@ class SignInForm extends Component {
                     </div>
                 </form>
             </div>
+        </div>
         )
     }
 }
