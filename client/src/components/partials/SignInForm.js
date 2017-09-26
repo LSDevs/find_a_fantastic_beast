@@ -67,7 +67,7 @@ class SignInForm extends Component {
                     <div className="controlField">
                         <p className="control">
                             <button className="inputBtn">
-                                Login
+                                LOGIN
                             </button>
                         </p>
                     </div>

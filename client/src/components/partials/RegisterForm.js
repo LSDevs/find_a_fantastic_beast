@@ -56,8 +56,8 @@ handleRegister(event) {
     }
     render() {
     return(
-      <div className='LoginBoxContainer'>
-        <div className="LoginBox">
+      <div className='RegisterBoxContainer'>
+        <div className="RegisterBox">
           <form
             className='addUser'
             onSubmit={this.handleRegister}
@@ -103,7 +103,7 @@ handleRegister(event) {
                 <br/>
                 <div className='controlField'>
                   <p className='control'>
-                    <button className="inputBtn" id="submit">RegisterUser</button>
+                    <button className="inputBtn" id="submit">REGISTER</button>
                   </p>
                 </div>
           </form>
