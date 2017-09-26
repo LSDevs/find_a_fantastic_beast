@@ -8,6 +8,7 @@ import SearchForm from './components/SearchForm';
 import SingleAnimal from './components/SingleAnimal';
 import AddAnimalForm from './components/AddAnimalForm';
 import AdoptAnimal from './components/AdoptAnimal'
+import About from './components/partials/About';
 
 import EditAnimalForm from './components/EditAnimalForm';
 
@@ -24,6 +25,7 @@ class App extends Component {
           <Switch>
              <Route exact path='/' component={Home} />
             <Route exact path='/search' component={SearchForm} />
+            <Route exact path='/about' component={About} />
             <Route exact path='/animals/:id' component={SingleAnimal} />
             <Route exact path='/editAnimal/:id' component={EditAnimalForm} />
             <Route exact path='/animals/:id/adopted' component={AdoptAnimal} />

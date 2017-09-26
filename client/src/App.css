@@ -758,3 +758,17 @@ label {
    color: #7b6aa3;
    text-decoration: none;
 }
+
+/* About */
+
+.about {
+  padding: 40px;
+}
+
+.about h1 {
+  color: white;
+}
+
+.about p {
+  color: white;
+}
