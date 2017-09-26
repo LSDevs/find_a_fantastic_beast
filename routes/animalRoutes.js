@@ -3,6 +3,8 @@ const animalController = require('../controllers/animalController');
 
 const animalRoutes = expr.Router();
 
+//animalRoutes.get('/:uid', animalController.showAnimalsByUser);
+
 animalRoutes.route('/:borough/:id')
   .get(animalController.showById)
   .put(animalController.updateAnimal)

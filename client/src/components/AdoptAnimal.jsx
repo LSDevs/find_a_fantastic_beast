@@ -11,6 +11,7 @@ export default class AdoptAnimal extends Component {
     this.state = {
       auth: !!TokenService.read(),
       animalId: null,
+      userEmail: '',
     }
     //bindings
     this.handleLoginForm = this.handleLoginForm.bind(this);
@@ -24,6 +25,7 @@ export default class AdoptAnimal extends Component {
           this.setState({
             auth: true,
           });
+
         } catch (e) {
             console.log(e);
 
@@ -36,12 +38,28 @@ export default class AdoptAnimal extends Component {
         TokenService.destroy();
         this.setState({auth: false})
       }
+      deleteAcct(ev) {
+        ev.preventDefault();
+
+        axios.delete(`http://localhost3001/user/${this.state.userEmail}`)
+            .then((res) => {
+                this.setState(prevState => {
+                return {
+                    auth: false
+                }
+                })
+                TokenService.destroy();
+            }).catch(err => console.log(err));
+      }
 
   render() {
     if (this.state.auth) {
       return(
         <div id="adopted">
-          <AdoptedList />
+          <AdoptedList
+            deleteAcct={this.deleteAcct}
+            user={this.state.userEmail}
+          />
         </div>
       )
     }
@@ -49,6 +67,8 @@ export default class AdoptAnimal extends Component {
       <div id="login">
         <SignInForm
             handleLoginForm={this.handleLoginForm}
+            handleLogout={this.handleLogout}
+
         />
       </div>
     )

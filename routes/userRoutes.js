@@ -3,8 +3,8 @@ const userController = require('../controllers/userController');
 
 const userRoutes = expr.Router();
 
-//userRoutes.route('/:id')
-  //.delete(userModel.destroyUser)
+userRoutes.route('/:email')
+  .delete(userController.deleteUser)
   //.get(userModel.findOneByUser)
   //.put(userModel.upSertUser);
 

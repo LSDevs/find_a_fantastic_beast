@@ -53,6 +53,7 @@ class SingleAnimal extends Component {
                <span className="name"><div className="info">Gender: </div>{this.state.animal.gender}</span>
                 <span className="name"><div className="info">Location: </div>{this.state.animal.borough}</span>
         </div>
+
         </div>
         )
     } else return 'Loading...';
@@ -63,8 +64,7 @@ renderEditForm() {
     return (
       <EditAnimalForm
       animal={this.state.animal} />
-
-      )
+    )
   }
 }
 

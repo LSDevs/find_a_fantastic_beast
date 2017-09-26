@@ -36,7 +36,6 @@ Animal.create = (animal) => {
 
 
 Animal.update = (animal)=> {
-  console.log(animal)
         return db.one(`
         UPDATE animals SET
         name = $1,
@@ -61,5 +60,6 @@ Animal.destroy = (id) => {
       WHERE id = $1
     `, [id]);
   }
+
 
 module.exports = Animal;

@@ -5,6 +5,7 @@ const TokenService = require('./TokenService');
 const isValidUser = async ({username, password: textPassword}) => {
   try {
     const user = await User.findOneByUser(username);
+    console.log(user);
     const pass = await crypt.compare(textPassword, user.password);
 
     return pass
@@ -16,6 +17,7 @@ const isValidUser = async ({username, password: textPassword}) => {
 
 module.exports = {
   authenticate: (req, res, next) => {
+    console.log(req.body)
     if (!isValidUser(req.body)) {
       return next({});
     }
@@ -25,6 +27,8 @@ module.exports = {
     })
     .then(token => {
       res.locals.token = token;
+      res.locals.user = req.body.username;
+      console.log(res.locals.user)
       next();
     })
     .catch(next);

@@ -15,10 +15,15 @@ class SignInForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInputChange(event) {
-
     const target = event.target;
+
+    if (target.type === 'email') {
+        this.setState({user: target.value})
+    }
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+
+
 
     this.setState({
       [name]: value,

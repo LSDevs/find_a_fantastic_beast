@@ -83,8 +83,8 @@ module.exports = {
       });
     });
   },
-  deleteAnimal(req, res) {
-    animalModel.destroy(req.params.id)
+  deleteUser(req, res) {
+    userModel.destroyUser(req.params.email)
     .then(() => res.json({message: 'Successful!'}))
     .catch(err => {
       console.log(err);
