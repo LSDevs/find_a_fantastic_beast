@@ -47,7 +47,7 @@ module.exports = {
       gender: req.body.gender,
       borough: req.body.borough,
       image_link: req.body.image_link,
-      is_adopted: FALSE,
+      is_adopted: false,
     })
     .then(animal => {
       res.json({
@@ -64,6 +64,7 @@ module.exports = {
     });
   },
   updateAnimal(req, res) {
+    console.log(req.body);
     animalModel.update({
       name: req.body.name,
       species: req.body.species,
@@ -75,6 +76,7 @@ module.exports = {
       gender: req.body.gender,
       borough: req.body.borough,
       image_link: req.body.image_link,
+      id: req.params.id
     })
     .then(animal => {
       res.json({

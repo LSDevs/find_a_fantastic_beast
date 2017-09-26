@@ -40,18 +40,20 @@ class SingleAnimal extends Component {
   renderAnimal() {
     if (this.state.animalDataReceived) {
       return (
+        <div>
+        <img id="singleAnimalPic" src={this.state.animal.image_link} alt='animal' />
         <div className="single-animal-render">
-          <img src={this.state.animal.image_link} alt='animal' />
-        <span className="name">{this.state.animal.name}</span>
-         <span className="name">{this.state.animal.species}</span>
-          <span className="name">{this.state.animal.age}</span>
-           <span className="name">{this.state.animal.breed_origin}</span>
-            <span className="name">{this.state.animal.personality}</span>
-             <span className="name">{this.state.animal.abilities}</span>
-              <span className="name">{this.state.animal.favorite_foods}</span>
-               <span className="name">{this.state.animal.gender}</span>
-                <span className="name">{this.state.animal.borough}</span>
-                <br />
+        <span className="name"><div className="info">Name: </div>{this.state.animal.name}</span>
+         <span className="name"><div className="info">Species:  </div>{this.state.animal.species}</span>
+          <span className="name"><div className="info">Age: </div>{this.state.animal.age}</span>
+           <span className="name"><div className="info">Breed or Origin: </div>{this.state.animal.breed_origin}</span>
+            <span className="name"><div className="info">Personality: </div>{this.state.animal.personality}</span>
+             <span className="name"><div className="info">Abilitites: </div>{this.state.animal.abilities}</span>
+              <span className="name"><div className="info">Favorite Foods: </div>{this.state.animal.favorite_foods}</span>
+               <span className="name"><div className="info">Gender: </div>{this.state.animal.gender}</span>
+                <span className="name"><div className="info">Location: </div>{this.state.animal.borough}</span>
+        </div>
+
         </div>
         )
     } else return 'Loading...';
@@ -60,8 +62,9 @@ class SingleAnimal extends Component {
 renderEditForm() {
   if (this.state.isBeingEdited) {
     return (
-      <EditAnimalForm />
-      )
+      <EditAnimalForm
+      animal={this.state.animal} />
+    )
   }
 }
 
@@ -70,11 +73,11 @@ renderEditForm() {
     return (
       <div className="single-animal">
         {this.renderAnimal()}
-        <button onClick={() => {
+        <button className="editButton" onClick={() => {
           this.setState({isBeingEdited: true})
         }}>Edit Animal</button>
         {this.renderEditForm()}
-        <button onClick={() => { this.props.handleDeleteAnimal(this.props.animal.id) }}>
+        <button className="deleteButton" onClick={() => { this.handleDeleteAnimal(this.state.id) }}>
           Adopt me!
         </button>
       </div>

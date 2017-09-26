@@ -1,68 +1,117 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// @Silvi - This is just a mess, I was trying to mix all the exercise we've done done so far, but actually the funcion is incompleted.
+import EditForm from './partials/EditForm';
+import SingleAnimal from './SingleAnimal';
+
 
 
 class EditAnimalForm extends Component {
     constructor(props) {
-        super(props);
-
-        this.state = {
-            isBeingEdited: false,
-            inputNameValue: this.props.animals.name,
-            inputSpeciesValue: this.props.animals.species,
-            inputAgeValue: this.props.animals.age,
-            inputBreedOriginValue: this.props.animals.breed_origin,
-            inputPersonalityValue: this.props.animals.personality,
-            inputAbilitiesValue: this.props.animals.abilities,
-            inputFavFoodValue: this.props.animals.favorite_food,
-            inputGenderValue: this.props.animals.gender,
-            inputBoroughValue: this.props.animals.borough,
-            inputImageValue: this.props.animals.image,
-            id: this.props.match.params.id,
-        }
+    super(props);
+    this.state = {
+      isBeingEdited: false,
+      inputNameValue: props.animal.name,
+      inputSpeciesValue: props.animal.species,
+      inputAgeValue: props.animal.age,
+       inputBreedOriginValue: props.animal.breed_origin,
+      inputPersonalityValue: props.animal.personality,
+       inputAbilitiesValue: props.animal.abilities,
+       inputFavoriteFoodsValue: props.animal.favorite_foods,
+       inputGenderValue: props.animal.gender,
+    addInputBoroughValue: props.animal.borough,
+      inputImageValue: props.animal.image_link,
+      id: props.animal.id,
     }
+    this.handleAnimalEdit = this.handleAnimalEdit.bind(this);
+    this.handleInputNameChange = this.handleInputNameChange.bind(this);
+    this.handleInputSpeciesChange = this.handleInputSpeciesChange.bind(this);
+    this.handleInputAgeChange = this.handleInputAgeChange.bind(this);
+    this.handleInputBreedOriginChange = this.handleInputBreedOriginChange.bind(this);
+    this.handleInputPersonalityChange = this.handleInputPersonalityChange.bind(this);
+    this.handleInputAbilitiesChange = this.handleInputAbilitiesChange.bind(this);
+    this.handleInputFavoriteFoodsChange = this.handleInputFavoriteFoodsChange.bind(this);
+    this.handleInputGenderChange = this.handleInputGenderChange.bind(this);
+    this.handleInputBoroughChange = this.handleInputBoroughChange.bind(this);
+    this.handleInputImageChange = this.handleInputImageChange.bind(this);
+  }
+  handleInputNameChange(event) {
+    this.setState({inputNameValue: event.target.value})
+  }
+  handleInputSpeciesChange(event) {
+    this.setState({inputSpeciesValue: event.target.value})
+  }
+  handleInputAgeChange(event) {
+    this.setState({inputAgeValue: event.target.value})
+  }
+  handleInputBreedOriginChange(event) {
+    this.setState({inputBreedOriginValue: event.target.value})
+  }
+  handleInputPersonalityChange(event) {
+    this.setState({inputPersonalityValue: event.target.value})
+  }
+  handleInputAbilitiesChange(event) {
+    this.setState({inputAbilitiesValue: event.target.value})
+  }
+  handleInputFavoriteFoodsChange(event) {
+    this.setState({inputFavoriteFoodsValue: event.target.value})
+  }
+  handleInputGenderChange(event) {
+    this.setState({inputGenderValue: event.target.value})
+  }
+  handleInputBoroughChange(event) {
+    this.setState({addInputBoroughValue: event.target.value})
+  }
+  handleInputImageChange(event) {
+    this.setState({inputImageValue: event.target.value})
+  }
 
-handleAnimalEdit(event) {
+  handleAnimalEdit(event) {
     event.preventDefault();
-    axios.put(`http://localhost:3001/api/animals/${this.state.id}`, {
-        name: this.state.inputNameValue,
-        species: this.state.inputSpeciesValue,
-        age: this.state.inputAgeValue,
-        breedOrigin: this.state.inputBreedOriginValue,
-        personality: this.state.inputPersonalityValue,
-        abilities: this.props.inputAbilitiesValue,
-        favFood: this.props.inputFavFoodValue,
-        gender: this.props.inputGenderValue,
-        borough: this.props.inputBoroughValue,
-        inputImageValue: this.props.inputImageValue,
-    })
-    .then(res => {
-        console.log(res.data)
-        {
-            const editAnimal = {
-                animal: res.data.animal.name,
-                species: res.data.animal.species,
-                age: res.data.animal.age,
-                breedOrigin: res.data.animal.breed_origin,
-                personality: res.data.animal.personality,
-                abilities: res.data.animal.abilities,
-                favFood: res.data.animal.favorite_food,
-                gender: res.data.animal.gender,
-                borough: res.data.animal.borough,
-                inputImageValue: res.data.animal.image_link,
-            }
-            this.setState((prevState) => {
-                return {
-                    animals: prevState.animals.concat(editAnimal)
-                }
-            })
-        }
-    })
+    event.target.content = '';
+
+    axios.put(`http://localhost:3001/api/animals/${this.props.animal.borough}/${this.state.id}`, {
+      name: event.target.name.value,
+      species: event.target.species.value,
+      age: event.target.age.value,
+      breed_origin: event.target.breed_origin.value,
+      personality: event.target.personality.value,
+      abilities: event.target.abilities.value,
+      favorite_foods: event.target.favorite_foods.value,
+      gender: event.target.gender.value,
+      borough: event.target.borough.value,
+      image_link: event.target.image_link.value
+    }).catch(err => console.log(err));
+
+  }
+
+  render() {
+    return (
+      <EditForm
+        handleInputImageChange={this.handleInputImageChange}
+        handleInputBoroughChange={this.handleInputBoroughChange}
+        handleInputGenderChange={this.handleInputGenderChange}
+        handleInputAbilitiesChange={this.handleInputAbilitiesChange}
+        handleInputPersonalityChange={this.handleInputPersonalityChange}
+        handleInputAgeChange={this.handleInputAgeChange}
+        handleInputSpeciesChange={this.handleInputSpeciesChange}
+        handleInputNameChange={this.handleInputNameChange}
+        handleInputFavoriteFoodsChange={this.handleInputFavoriteFoodsChange}
+        handleInputBreedOriginChange={this.handleInputBreedOriginChange}
+        handleAnimalEdit={this.handleAnimalEdit}
+        inputNameValue={this.state.inputNameValue}
+         inputSpeciesValue={this.state.inputSpeciesValue}
+         inputAgeValue={this.state.inputAgeValue}
+         inputBreedOriginValue={this.state.inputBreedOriginValue}
+         inputPersonalityValue={this.state.inputPersonalityValue}
+         inputAbilitiesValue={this.state.inputAbilitiesValue}
+         inputFavoriteFoodsValue={this.state.inputFavoriteFoodsValue}
+         inputGenderValue={this.state.inputGenderValue}
+         addInputBoroughValue={this.state.addinputGenderValue}
+        inputImageValue={this.state.inputImageValue}
+         animal={this.props.animal}
+      />
+    )
+  }
 }
- }
-
-
-
 
 export default EditAnimalForm;
