@@ -404,7 +404,7 @@ display: inline-flex;
 #editOption {
   text-shadow: 1px 1px black;
   display: inline-block;
-  font-family: 'Carter One', cursive;
+  font-family: 'Berkshire Swash', cursive;
   font-size: 18px;
   color: #fccd04;
   background-color: #2d5f5d;
@@ -415,3 +415,201 @@ display: inline-flex;
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
+
+.inputEdit {
+  text-shadow: 1px 1px black;
+  font-family: 'Carter One', cursive;
+  font-size: 16px;
+  background-color: #fccd04;
+  color: #78244c;
+  height: 25px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  border-bottom: 2px solid black;
+}
+
+#submitEditButton {
+  font-size: 16px;
+  margin-top: 20px;
+  height: 30px;
+  font-family: 'Berkshire Swash', cursive;
+  background-color: #a64ac9;
+  color: #2d5f5d;
+  border-bottom: 2px solid black;
+  text-shadow: 1px 1px black;
+}
+
+#submitEditButton:hover {
+  color: #fbe8a6;
+}
+
+.addNewAnimal {
+  display: flex;
+}
+
+.addInput {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  text-shadow: 1px 1px black;
+  font-family: 'Carter One', cursive;
+  font-size: 16px;
+  background-color: #fbe8a6;
+  color: #78244c;
+  height: 25px;
+  width: 100px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  border-bottom: 2px solid black;
+}
+
+#submitAdd {
+  margin-top: 150px;
+  margin-left: -640px;
+  font-size: 18px;
+  height: 30px;
+  font-family: 'Berkshire Swash', cursive;
+  background-color: #a11a5a;
+  color: #1ba369;
+  padding: 8;
+  border-radius: 50px;
+  border-bottom: 2px solid black;
+  text-shadow: 1px 1px black;
+}
+
+#submitAdd:hover {
+  color: #fbe8a6;
+}
+
+.LoginBox {
+  width:100%;
+  height:100%;
+  margin: 0, auto;
+  background: #DDD;
+}
+
+.LoginBoxContainer {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+}
+.LoginBoxContainer h1{
+  color:#9fcabe;
+  padding: 30px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.LoginBoxContainer {
+  width:960px;
+  height:auto;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.LoginBox .LoginBoxContainer form input,
+.LoginBox .LoginBoxContainer form textarea {
+  width:97.4%;
+  height:30px;
+  padding:5px 10px;
+  font-size: 12px;
+  color:#999;
+  letter-spacing:1px;
+  background: #FFF;
+  border:2px solid #FFF;
+  margin-bottom:25px;
+  -webkit-transition:all .1s ease-in-out;
+  -moz-transition:all .1s ease-in-out;
+  -ms-transition:all .1s ease-in-out;
+  -o-transition:all .1s ease-in-out;
+  transition:all .1s ease-in-out;}
+
+  .LoginBoxContainer form input,
+  .LoginBox .LoginBoxContainer form textarea {
+  width:200px;
+  height:30px;
+  padding:5px 10px;
+  font-size: 12px;
+  color:#999;
+  letter-spacing:1px;
+  background: #FFF;
+  border:2px solid #FFF;
+  margin-bottom:25px;
+  -webkit-transition:all .1s ease-in-out;
+  -moz-transition:all .1s ease-in-out;
+  -ms-transition:all .1s ease-in-out;
+  -o-transition:all .1s ease-in-out;
+  transition:all .1s ease-in-out;}
+
+  .LoginBox   .LoginBoxContainer  form input:focus,
+  .LoginBox   .LoginBoxContainer form textarea:focus {
+  border:2px solid #ff9713;
+  color:#999;}
+
+  .LoginBox .LoginBoxContainer form textarea {
+  height:150px;}
+
+  .LoginBox .LoginBoxContainer  form .submit {
+  width:100%;
+  padding:5px 10px;
+  font-size: 12px;
+  letter-spacing:1px;
+  background:#ff9713;
+  height:40px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#FFF;
+  border:2px solid #ff9713;
+  -webkit-transition:all .1s ease-in-out;
+  -moz-transition:all .1s ease-in-out;
+  -ms-transition:all .1s ease-in-out;
+  -o-transition:all .1s ease-in-out;
+  transition:all .1s ease-in-out;}
+
+  .LoginBox  .LoginBoxContainer  form .submit:hover {
+  color:#FFF;
+  border:2px solid #ff9713;
+  background: #ff9713;
+  cursor:pointer;}
+
+  .LoginBox .LoginBoxContainer  form .required {
+  color:#ff9713;}
+
+label {
+  color:#3F3E3E;
+  font-size: 12 px;
+  letter-spacing:1px;
+  text-transform: uppercase;
+}
+
+.button {
+  font-family: 'Oswald', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  padding: 12px;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.2);
+  border-radius: 5px;
+}
+
+.inputBtn {
+  text-decoration: none;
+}
+.inputBtn:hover
+{
+   color: #7b6aa3;
+   text-decoration: none;
+}
+.inputBtn:active
+{
+   color: #7b6aa3;
+   text-decoration: none;
+}
+

@@ -14,6 +14,7 @@ import EditAnimalForm from './components/EditAnimalForm';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
 
+
 class App extends Component {
   render() {
     return(

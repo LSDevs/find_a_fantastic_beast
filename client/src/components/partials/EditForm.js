@@ -11,7 +11,7 @@ class EditForm extends Component {
         onSubmit={this.props.handleAnimalEdit}
       >
         <div id="editOption">Name</div>
-         <input id="editInput"
+         <input className="inputEdit"
           type='text'
           value={this.props.inputNameValue}
           name='name'
@@ -19,7 +19,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputNameChange}
         /><br/>
         <div id="editOption">Species</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputSpeciesValue}
           name='species'
@@ -27,7 +27,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputSpeciesChange}
         /><br/>
         <div id="editOption">Age</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputAgeValue}
           name='age'
@@ -35,7 +35,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputAgeChange}
         /><br/>
         <div id="editOption">Breed or Origin</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputBreedOriginValue}
           name='breed_origin'
@@ -43,7 +43,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputBreedOriginChange}
         /><br/>
         <div id="editOption">Personality</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputPersonalityValue}
           name='personality'
@@ -51,7 +51,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputPersonalityChange}
         /><br/>
         <div id="editOption">Abilities</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputAbilitiesValue}
           name='abilities'
@@ -59,7 +59,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputAbilitiesChange}
         /><br/>
         <div id="editOption">Favorite foods</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputFavoriteFoodsValue}
           name='favorite_foods'
@@ -67,7 +67,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputFavoriteFoodsChange}
         /><br/>
         <div id="editOption">Gender</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputGenderValue}
           name='gender'
@@ -75,7 +75,7 @@ class EditForm extends Component {
           onChange={this.props.handleInputGenderChange}
         /><br/>
         <div id="editOption">Location</div>
-          <select name='borough' type='text' onChange={this.props.handleInputBoroughChange}
+          <select className="inputEdit" name='borough' type='text' onChange={this.props.handleInputBoroughChange}
           value={this.props.addInputBoroughValue}>
           <option value='null'>Borough</option>
           <option value='Bronx'>Bronx</option>
@@ -86,7 +86,7 @@ class EditForm extends Component {
             </select>
         <br/>
         <div id="editOption">Image link</div>
-        <input
+        <input className="inputEdit"
           type='text'
           value={this.props.inputImageValue}
           name='image_link'

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import axios from 'axios';
+
 class SignInForm extends Component {
   constructor(){
     super();
@@ -16,6 +18,19 @@ class SignInForm extends Component {
   }
   handleInputChange(event) {
     const target = event.target;
+        // Set the state
+        this.state = {
+            // -----> do we have to set it undefined, as well?
+            // name: undefined,
+            username: undefined,
+            password: undefined,
+        };
+        this.handleSumbit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleLoginForm = this.handleLoginForm.bind(this);
+    }
+
+    handleInputChange(event) {
 
     if (target.type === 'email') {
         this.setState({user: target.value})

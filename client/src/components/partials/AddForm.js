@@ -7,63 +7,71 @@ class AddForm extends Component {
         className='addNewAnimal'
         onSubmit={this.props.handleAddFormSubmit}
       >
-        <input
+        <input className="addInput"
           type='text'
           value={this.props.inputNameValue}
           name='name'
           placeholder='Name'
           onChange={this.props.handleInputNameChange}
         /><br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputSpeciesValue}
           name='species'
           placeholder='Species'
           onChange={this.props.handleInputSpeciesChange}
         /><br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputAgeValue}
           name='age'
           placeholder='Age'
           onChange={this.props.handleInputAgeChange}
         /><br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputBreedOriginValue}
           name='breed_origin'
           placeholder='Breed or origin'
           onChange={this.props.handleInputBreedOriginChange}
         /><br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputPersonalityValue}
           name='personality'
           placeholder='Personality'
           onChange={this.props.handleInputPersonalityChange}
         /><br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputAbilitiesValue}
           name='abilities'
           placeholder='Abilities'
           onChange={this.props.handleInputAbilitiesChange}
         /><br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputFavoriteFoodsValue}
           name='favorite_food'
           placeholder='Favorite food'
           onChange={this.props.handleInputFavoriteFoodsChange}
         /><br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputGenderValue}
           name='gender'
           placeholder='Gender'
           onChange={this.props.handleInputGenderChange}
         /><br/>
-          <select name='addBorough' type='text' onChange={this.props.handleInputBoroughChange}
+          <select className="addInput"
+ name='addBorough' type='text' onChange={this.props.handleInputBoroughChange}
           value={this.props.addInputBoroughValue}>
           <option value='null'>Borough</option>
           <option value='Bronx'>Bronx</option>
@@ -73,14 +81,15 @@ class AddForm extends Component {
               <option value='Staten Island'>Staten Island</option>
             </select>
         <br/>
-        <input
+        <input className="addInput"
+
           type='text'
           value={this.props.inputImageValue}
           name='image_link'
           placeholder='Image Link'
           onChange={this.props.handleInputImageChange}
         /><br/>
-        <button id="submit">Add Animal</button>
+        <button id="submitAdd">Add Animal</button>
       </form>
     )
   }
