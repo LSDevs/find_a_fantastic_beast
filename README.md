@@ -44,6 +44,8 @@ The user can also register in the website, create an account and log-in.
 
 ![Register](./public/images/Register.png)
 
+![Login](./public/images/Login.png)
+
 ![Search results](./public/images/SearchResults.png)
 
 ![Single Animal](./public/images/SingleAnimal.png)
