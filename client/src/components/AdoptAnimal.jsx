@@ -19,6 +19,7 @@ export default class AdoptAnimal extends Component {
   }
   //functions
   async handleLoginForm(formData) {
+
         try {
           const {data: {token}} = await axios.post('http://localhost:3001/auth', formData);
           TokenService.save(token);
@@ -28,7 +29,7 @@ export default class AdoptAnimal extends Component {
 
         } catch (e) {
             console.log(e);
-
+            TokenService.destroy();
             this.setState({
               auth: false,
             });

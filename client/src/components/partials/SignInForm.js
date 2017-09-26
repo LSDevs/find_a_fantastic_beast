@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-import axios from 'axios';
-
 class SignInForm extends Component {
   constructor(){
     super();
@@ -16,21 +14,8 @@ class SignInForm extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleInputChange(event) {
-    const target = event.target;
-        // Set the state
-        this.state = {
-            // -----> do we have to set it undefined, as well?
-            // name: undefined,
-            username: undefined,
-            password: undefined,
-        };
-        this.handleSumbit = this.handleSubmit.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleLoginForm = this.handleLoginForm.bind(this);
-    }
-
     handleInputChange(event) {
+    const target = event.target;
 
     if (target.type === 'email') {
         this.setState({user: target.value})
@@ -48,7 +33,7 @@ class SignInForm extends Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.state);
-        // send the data to the parent
+
         this.props.handleLoginForm(this.state);
     }
     render() {

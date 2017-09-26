@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
+
 import EditAnimalForm from './EditAnimalForm';
 
 class SingleAnimal extends Component {

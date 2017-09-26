@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import EditForm from './partials/EditForm';
-import SingleAnimal from './SingleAnimal';
-
-
 
 class EditAnimalForm extends Component {
     constructor(props) {
