@@ -50,7 +50,7 @@ Animal.update = (animal)=> {
         image_link = $10
         WHERE id = $11
         RETURNING *`,
-        [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_food, animal.gender, animal.borough, animal.image_link, animal.id]
+        [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_foods, animal.gender, animal.borough, animal.image_link, animal.id]
     );
 };
 
