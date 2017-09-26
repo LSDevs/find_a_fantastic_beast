@@ -115,6 +115,15 @@ class AddAnimalForm extends Component {
         handleInputBreedOriginChange={this.handleInputBreedOriginChange}
         handleAddFormSubmit={this.handleAddFormSubmit}
         inputNameValue={this.props.inputNameValue}
+        inputSpeciesValue={this.state.inputSpeciesValue}
+         inputAgeValue={this.state.inputAgeValue}
+         inputBreedOriginValue={this.state.inputBreedOriginValue}
+         inputPersonalityValue={this.state.inputPersonalityValue}
+         inputAbilitiesValue={this.state.inputAbilitiesValue}
+         inputFavoriteFoodsValue={this.state.inputFavoriteFoodsValue}
+         inputGenderValue={this.state.inputGenderValue}
+         addInputBoroughValue={this.state.addinputGenderValue}
+        inputImageValue={this.state.inputImageValue}
       />
     )
   }

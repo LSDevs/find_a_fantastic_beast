@@ -4,18 +4,18 @@ import EditForm from './partials/EditForm';
 
 class EditAnimalForm extends Component {
     constructor(props) {
-
     super(props);
     this.state = {
+      isBeingEdited: false,
       inputNameValue: props.animal.name,
       inputSpeciesValue: props.animal.species,
       inputAgeValue: props.animal.age,
-      inputBreedOriginValue: props.animal.breed_origin,
+       inputBreedOriginValue: props.animal.breed_origin,
       inputPersonalityValue: props.animal.personality,
-      inputAbilitiesValue: props.animal.abilities,
-      inputFavoriteFoodsValue: props.animal.favorite_foods,
-      inputGenderValue: props.animal.gender,
-      addInputBoroughValue: props.animal.borough,
+       inputAbilitiesValue: props.animal.abilities,
+       inputFavoriteFoodsValue: props.animal.favorite_foods,
+       inputGenderValue: props.animal.gender,
+    addInputBoroughValue: props.animal.borough,
       inputImageValue: props.animal.image_link,
       id: props.animal.id,
     }
@@ -59,16 +59,16 @@ handleAnimalEdit(event) {
         handleInputBreedOriginChange={this.handleInputBreedOriginChange}
         handleAnimalEdit={this.handleAnimalEdit}
         inputNameValue={this.state.inputNameValue}
-        inputSpeciesValue={this.state.inputSpeciesValue}
-        inputAgeValue={this.state.inputAgeValue}
-        inputBreedOriginValue={this.state.inputBreedOriginValue}
-        inputPersonalityValue={this.state.inputPersonalityValue}
-        inputAbilitiesValue={this.state.inputAbilitiesValue}
-        inputFavoriteFoodsValue={this.state.inputFavoriteFoodsValue}
-        inputGenderValue={this.state.inputGenderValue}
-        addInputBoroughValue={this.state.addinputGenderValue}
+         inputSpeciesValue={this.state.inputSpeciesValue}
+         inputAgeValue={this.state.inputAgeValue}
+         inputBreedOriginValue={this.state.inputBreedOriginValue}
+         inputPersonalityValue={this.state.inputPersonalityValue}
+         inputAbilitiesValue={this.state.inputAbilitiesValue}
+         inputFavoriteFoodsValue={this.state.inputFavoriteFoodsValue}
+         inputGenderValue={this.state.inputGenderValue}
+         addInputBoroughValue={this.state.addinputGenderValue}
         inputImageValue={this.state.inputImageValue}
-        animal={this.props.animal}
+         animal={this.props.animal}
       />
     )
 }

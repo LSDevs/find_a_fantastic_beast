@@ -29,6 +29,7 @@
   color: #109820;
   -webkit-animation:colorchange 15s infinite alternate;
   text-align: center;
+  text-shadow: 1px 1px black;
     }
 
     @-webkit-keyframes colorchange {
@@ -98,7 +99,8 @@
   font-family: 'Berkshire Swash', cursive;
   display: inline-flex;
   padding: 10px;
-  margin-left: 170px;
+  margin-left: 120px;
+  text-shadow: 1px 1px black;
 }
 
  nav a {
@@ -116,6 +118,7 @@
   font-size: 32px;
   color: #88bdbc;
   text-align: center;
+  text-shadow: 1px 1px black;
 
  }
 
@@ -130,10 +133,11 @@
   height: 30px;
   width: 150px;
   background-color: #c4dbf6;
-   font-size: 16px;
+   font-size: 20px;
    color: #78244c;
    font-family: 'Lobster Two', cursive;
    font-weight: 900;
+   text-shadow: 1px 1px black;
  }
 
  .submitBorough {
@@ -144,6 +148,7 @@
   background-color: #78244c;
   color: #fccd04;
   border-radius: 8px;
+  text-shadow: 1px 1px black;
 }
 
 .submitBorough:hover {
@@ -168,6 +173,7 @@
   justify-content: center;
   padding-top: 3%;
   animation: colors 20s ease-in-out 0s infinite;
+  text-shadow: 1px 1px black;
  }
 
  span#devName {
@@ -256,11 +262,12 @@
   padding: 8px;
   filter: alpha(opacity=50);
   border-radius: 50px;
+  text-shadow: 1px 1px black;
 }
 
 .Animal {
   margin: 0 auto;
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 .animalInfo {
@@ -268,7 +275,7 @@
   width: 600px;
   margin-top: 50px;
   margin-left: 350px;
-  background-color: white;
+  background-color: #fbe8a6;
   opacity: 0.8;
   padding: 8px;
   filter: alpha(opacity=80);
@@ -279,8 +286,9 @@
   display: flex;
   justify-content: center;
   font-family: 'Carter One', cursive;
-  font-size: 30px;
+  font-size: 34px;
   color: #a64ac9;
+  text-shadow: 1px 1px black;
 
 }
 
@@ -288,8 +296,9 @@
   display: flex;
   justify-content: center;
   font-family: 'Carter One', cursive;
-  font-size: 30px;
+  font-size: 34px;
   color: #a64ac9;
+  text-shadow: 1px 1px black;
 
 }
 
@@ -303,6 +312,7 @@
   height: 30px;
   background-color: #78244c;
   border-radius: 8px;
+  text-shadow: 1px 1px black;
 
 }
 
@@ -388,5 +398,20 @@ display: inline-flex;
 
 .editAnimal {
   margin-top: 20px;
-  margin-left: 400px;
+  margin-left: 600px;
+}
+
+#editOption {
+  text-shadow: 1px 1px black;
+  display: inline-block;
+  font-family: 'Carter One', cursive;
+  font-size: 18px;
+  color: #fccd04;
+  background-color: #2d5f5d;
+  margin-right: 10px;
+  margin-left: -70px;
+  padding: 5px;
+  border-bottom: 2px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }

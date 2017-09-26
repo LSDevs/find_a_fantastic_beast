@@ -10,8 +10,8 @@ class EditForm extends Component {
         className='editAnimal'
         onSubmit={this.props.handleAnimalEdit}
       >
-      <div id="editOption">Name</div>
-        <input id="editInput"
+        <div id="editOption">Name</div>
+         <input id="editInput"
           type='text'
           value={this.props.inputNameValue}
           name='name'
@@ -58,7 +58,7 @@ class EditForm extends Component {
           placeholder='Abilities'
           onChange={this.props.handleInputAbilitiesChange}
         /><br/>
-        <div id="editOption">Favorite Foods</div>
+        <div id="editOption">Favorite foods</div>
         <input
           type='text'
           value={this.props.inputFavoriteFoodsValue}
@@ -85,7 +85,7 @@ class EditForm extends Component {
               <option value='Staten Island'>Staten Island</option>
             </select>
         <br/>
-        <div id="editOption">Image Link</div>
+        <div id="editOption">Image link</div>
         <input
           type='text'
           value={this.props.inputImageValue}

@@ -11,6 +11,6 @@ animalRoutes.route('/:borough/:id')
 animalRoutes.route('/:borough')
   .get(animalController.showByBorough);
 
-  animalRoutes.post('/', animalController.createAnimal);
+ animalRoutes.post('/', animalController.createAnimal);
 
 module.exports = animalRoutes;

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import {Route, Redirect, Switch} from 'react-router-dom';
+<<<<<<< HEAD
 
+=======
+import './App.css';
+import RegisterForm from './components/RegisterForm';
+>>>>>>> 53728e08f7811a2c92f4f8a238184ba1a2776cb3
 import Home from './components/Home';
 import SearchForm from './components/SearchForm';
 import './App.css';
@@ -19,7 +24,7 @@ class App extends Component {
         <Header />
         <main>
           <Switch>
-            <Route exact path='/' component={Home} />
+             <Route exact path='/' component={Home} />
             <Route exact path='/search' component={SearchForm} />
             <Route exact path='/animals/:id' component={SingleAnimal} />
             <Route exact path='/editAnimal/:id' component={EditAnimalForm} />

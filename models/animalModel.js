@@ -1,7 +1,7 @@
 const pgp = require('pg-promise')();
 const dbConfig = require('../db/config');
-
 const db = pgp(dbConfig);
+
 
 const Animal = {};
 
@@ -29,9 +29,9 @@ Animal.create = (animal) => {
         `
         INSERT INTO animals
         (name,species,age,breed_origin,personality,abilities,favorite_foods,gender,borough,image_link, is_adopted)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10, false)
+         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10, false)
         RETURNING *`,
-        [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_foods, animal.gender, animal.borough, animal.image_link, animal.is_adopted]
+        [animal.name, animal.species, animal.age, animal.breed_origin, animal.personality, animal.abilities, animal.favorite_foods, animal.gender, animal.borough, animal.image_link, animal.is_adopted, animal.id]
     )};
 
 

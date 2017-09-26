@@ -43,7 +43,6 @@ class SingleAnimal extends Component {
         <div>
         <img id="singleAnimalPic" src={this.state.animal.image_link} alt='animal' />
         <div className="single-animal-render">
-
         <span className="name"><div className="info">Name: </div>{this.state.animal.name}</span>
          <span className="name"><div className="info">Species:  </div>{this.state.animal.species}</span>
           <span className="name"><div className="info">Age: </div>{this.state.animal.age}</span>
