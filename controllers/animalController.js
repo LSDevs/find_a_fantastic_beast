@@ -101,4 +101,7 @@ module.exports = {
       });
     });
   },
+  //showAnimalByUser(req, res) {
+   // animalModel.findByUser(req.params.uid)
+  //},
 };

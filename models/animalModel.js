@@ -60,4 +60,5 @@ Animal.destroy = (id) => {
     `, [id]);
   }
 
+
 module.exports = Animal;

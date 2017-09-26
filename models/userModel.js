@@ -32,15 +32,14 @@ module.exports = {
         (name, email, password)
       VALUES
         ($/name/, $/email/, $/password/)
-
       RETURNING *
     `, user);
   },
-  destroyUser(id) {
+  destroyUser(email) {
     return db.none(`
       DELETE
         FROM users
-      WHERE id = $1
-    `, id);
+      WHERE email = $1
+    `, email);
   },
 };
